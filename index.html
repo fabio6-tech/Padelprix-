@@ -1,1 +1,666 @@
-file:///C:/Users/fabio/Downloads/padel-shop-v2.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PADL STORE — Équipement Padel Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f2ee;--white:#fff;--black:#0a0a0a;--accent:#e8ff00;--accent2:#ff3c3c;--surface:#ece9e4;--border:#ddd9d2;--text:#1a1a1a;--muted:#888880;--green:#00c96e;--orange:#ff8c00;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Cabinet Grotesk',sans-serif;overflow-x:hidden;}
+.announce{background:var(--black);color:var(--accent);text-align:center;padding:10px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;overflow:hidden;white-space:nowrap;}
+.announce-track{display:inline-block;animation:ticker 25s linear infinite;}
+@keyframes ticker{from{transform:translateX(100vw);}to{transform:translateX(-100%);}}
+header{background:var(--white);border-bottom:2px solid var(--black);position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1300px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px;}
+.logo{font-family:'Clash Display',sans-serif;font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--black);cursor:pointer;white-space:nowrap;}
+.logo span{color:var(--accent2);}
+.nav{display:flex;gap:0;align-items:center;flex-wrap:nowrap;}
+.nav-item{padding:7px 14px;font-size:13px;font-weight:500;cursor:pointer;border-radius:6px;transition:background .2s;white-space:nowrap;}
+.nav-item:hover{background:var(--surface);}
+.nav-item.active{background:var(--black);color:var(--white);}
+.header-actions{display:flex;align-items:center;gap:10px;}
+.search-bar{display:flex;align-items:center;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:7px 12px;gap:8px;width:190px;transition:border-color .2s;}
+.search-bar:focus-within{border-color:var(--black);}
+.search-bar input{background:none;border:none;outline:none;font-family:'Cabinet Grotesk',sans-serif;font-size:13px;color:var(--text);width:100%;}
+.search-bar input::placeholder{color:var(--muted);}
+.cart-btn{background:var(--black);color:var(--white);border:none;border-radius:8px;padding:9px 16px;font-family:'Cabinet Grotesk',sans-serif;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:transform .15s;}
+.cart-btn:hover{transform:scale(1.03);}
+.cart-count{background:var(--accent);color:var(--black);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.hero{background:var(--black);min-height:86vh;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-bg-text{position:absolute;font-family:'Clash Display',sans-serif;font-size:clamp(100px,16vw,220px);font-weight:700;color:rgba(255,255,255,.03);white-space:nowrap;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:-6px;}
+.hero-inner{max-width:1300px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;position:relative;z-index:1;width:100%;}
+.hero-label{font-family:'DM Mono',monospace;font-size:11px;color:#666;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.hero-label::before{content:'';width:28px;height:1px;background:#666;}
+.hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(48px,6.5vw,84px);font-weight:700;line-height:.92;letter-spacing:-3px;color:var(--white);margin-bottom:22px;}
+.hero h1 .y{color:var(--accent);}
+.hero-desc{font-size:15px;color:#777;line-height:1.7;margin-bottom:32px;max-width:420px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:var(--black);border:none;border-radius:10px;padding:13px 26px;font-family:'Clash Display',sans-serif;font-size:15px;font-weight:600;cursor:pointer;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,255,0,.3);}
+.btn-secondary{background:transparent;color:var(--white);border:2px solid #333;border-radius:10px;padding:13px 26px;font-family:'Clash Display',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:border-color .2s;}
+.btn-secondary:hover{border-color:#fff;}
+.hero-stats{display:flex;gap:36px;margin-top:36px;padding-top:28px;border-top:1px solid #1e1e1e;}
+.hero-stat-n{font-family:'Clash Display',sans-serif;font-size:32px;color:var(--white);font-weight:700;}
+.hero-stat-l{font-size:12px;color:#555;margin-top:2px;}
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:transform .2s,border-color .2s;}
+.hero-card:hover{transform:translateX(6px);border-color:rgba(232,255,0,.3);}
+.hero-card-svg{width:56px;height:56px;flex-shrink:0;background:rgba(255,255,255,.05);border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-card-svg svg{width:100%;height:100%;}
+.hero-card-label{font-family:'DM Mono',monospace;font-size:9px;color:#666;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.hero-card-name{font-family:'Clash Display',sans-serif;font-size:16px;color:var(--white);font-weight:600;}
+.hero-card-price{font-size:13px;color:var(--accent);font-weight:600;margin-top:2px;}
+.brands{background:var(--accent);padding:14px 24px;overflow:hidden;}
+.brands-track{display:flex;gap:50px;animation:scroll 22s linear infinite;white-space:nowrap;}
+.brand-item{font-family:'Clash Display',sans-serif;font-size:16px;font-weight:700;color:var(--black);flex-shrink:0;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.section{max-width:1300px;margin:0 auto;padding:60px 24px;}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;}
+.section-title{font-family:'Clash Display',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;letter-spacing:-1.5px;line-height:1;}
+.section-title em{font-style:normal;color:var(--accent2);}
+.section-sub{font-size:13px;color:var(--muted);max-width:380px;margin-top:6px;line-height:1.6;}
+.see-all{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer;border:1.5px solid var(--border);border-radius:20px;padding:7px 16px;transition:all .2s;white-space:nowrap;}
+.see-all:hover{color:var(--text);border-color:var(--text);}
+.cats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.cat-card{background:var(--white);border:2px solid var(--border);border-radius:14px;padding:22px 16px;cursor:pointer;transition:all .2s;text-align:center;}
+.cat-card:hover{border-color:var(--black);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+.cat-card.featured{background:var(--black);border-color:var(--black);}
+.cat-card.featured .cat-name{color:var(--white);}
+.cat-card.featured .cat-count{color:#555;}
+.cat-ico{font-size:40px;margin-bottom:12px;}
+.cat-name{font-family:'Clash Display',sans-serif;font-size:17px;font-weight:600;margin-bottom:3px;}
+.cat-count{font-size:12px;color:var(--muted);}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
+.prod-card{background:var(--white);border:2px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative;}
+.prod-card:hover{border-color:var(--black);transform:translateY(-5px);box-shadow:0 18px 42px rgba(0,0,0,.1);}
+.prod-badge{position:absolute;top:10px;left:10px;z-index:2;display:flex;flex-direction:column;gap:5px;}
+.badge{padding:3px 9px;border-radius:20px;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:1px;}
+.badge-new{background:var(--black);color:var(--accent);}
+.badge-sale{background:var(--accent2);color:var(--white);}
+.badge-best{background:var(--green);color:var(--white);}
+.prod-img{height:170px;display:flex;align-items:center;justify-content:center;background:var(--surface);position:relative;padding:10px;}
+.prod-img svg{width:100%;height:100%;max-height:150px;object-fit:contain;}
+.prod-fav{position:absolute;top:8px;right:8px;width:30px;height:30px;background:var(--white);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;transition:all .2s;z-index:3;}
+.prod-fav:hover,.prod-fav.active{border-color:var(--accent2);background:var(--accent2);color:var(--white);}
+.prod-body{padding:14px;}
+.prod-brand{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.prod-name{font-family:'Clash Display',sans-serif;font-size:15px;font-weight:600;line-height:1.2;margin-bottom:8px;}
+.prod-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;}
+.prod-tag{background:var(--surface);border-radius:5px;padding:2px 7px;font-size:10px;color:var(--muted);}
+.prod-tag.pro{background:rgba(255,60,60,.1);color:var(--accent2);}
+.prod-tag.inter{background:rgba(255,140,0,.1);color:var(--orange);}
+.prod-tag.init{background:rgba(0,201,110,.1);color:var(--green);}
+.prod-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1.5px solid var(--border);}
+.prod-price-old{font-size:11px;color:var(--muted);text-decoration:line-through;margin-bottom:1px;}
+.prod-price-new{font-family:'Clash Display',sans-serif;font-size:20px;font-weight:700;}
+.prod-price-new.sale{color:var(--accent2);}
+.add-btn{background:var(--black);color:var(--white);border:none;border-radius:7px;padding:8px 13px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.add-btn:hover{background:var(--accent);color:var(--black);}
+.promo-banner{background:var(--black);padding:60px 24px;}
+.promo-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.promo-label{font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
+.promo-inner h2{font-family:'Clash Display',sans-serif;font-size:clamp(32px,4.5vw,56px);font-weight:700;color:var(--white);letter-spacing:-2px;line-height:.95;margin-bottom:18px;}
+.promo-inner h2 span{color:var(--accent);}
+.promo-inner p{color:#666;font-size:14px;line-height:1.7;margin-bottom:26px;}
+.promo-right{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.promo-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;}
+.promo-stat-n{font-family:'Clash Display',sans-serif;font-size:30px;color:var(--accent);font-weight:700;}
+.promo-stat-l{font-size:12px;color:#555;margin-top:3px;}
+.filters-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;align-items:center;}
+.filter-btn{background:var(--white);border:2px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;}
+.filter-btn:hover,.filter-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+.sort-select{margin-left:auto;background:var(--white);border:2px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;font-family:'Cabinet Grotesk',sans-serif;cursor:pointer;outline:none;}
+.newsletter{background:var(--accent);padding:60px 24px;}
+.newsletter-inner{max-width:680px;margin:0 auto;text-align:center;}
+.newsletter h2{font-family:'Clash Display',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:700;letter-spacing:-2px;color:var(--black);margin-bottom:10px;}
+.newsletter p{font-size:14px;color:#555;margin-bottom:24px;}
+.newsletter-form{display:flex;gap:10px;max-width:440px;margin:0 auto;}
+.newsletter-form input{flex:1;background:var(--white);border:2px solid var(--black);border-radius:10px;padding:12px 16px;font-family:'Cabinet Grotesk',sans-serif;font-size:14px;outline:none;}
+.newsletter-form button{background:var(--black);color:var(--white);border:none;border-radius:10px;padding:12px 22px;font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;}
+footer{background:var(--black);color:var(--white);padding:50px 24px 28px;}
+.footer-inner{max-width:1300px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+.footer-logo{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:12px;}
+.footer-logo span{color:var(--accent2);}
+.footer-desc{font-size:13px;color:#444;line-height:1.7;margin-bottom:18px;}
+.footer-social{display:flex;gap:8px;}
+.social-btn{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;transition:background .2s;}
+.social-btn:hover{background:rgba(255,255,255,.14);}
+.footer-col h4{font-family:'Clash Display',sans-serif;font-size:15px;font-weight:600;margin-bottom:14px;}
+.footer-links{display:flex;flex-direction:column;gap:9px;}
+.footer-link{font-size:13px;color:#444;cursor:pointer;transition:color .2s;}
+.footer-link:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid #181818;padding-top:22px;display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:12px;color:#333;}
+.footer-badges{display:flex;gap:7px;}
+.footer-badge{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:5px;padding:5px 10px;font-family:'DM Mono',monospace;font-size:9px;color:#444;letter-spacing:1px;}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;}
+.cart-overlay.on{opacity:1;pointer-events:all;}
+.cart-panel{position:fixed;right:0;top:0;bottom:0;width:400px;background:var(--white);z-index:201;transform:translateX(100%);transition:transform .35s;display:flex;flex-direction:column;}
+.cart-overlay.on .cart-panel{transform:translateX(0);}
+.cart-header{padding:22px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.cart-title{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;}
+.cart-close{background:var(--surface);border:none;border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:16px;}
+.cart-items{flex:1;overflow-y:auto;padding:18px;}
+.cart-empty{text-align:center;padding:50px 20px;color:var(--muted);}
+.cart-item{display:flex;gap:12px;padding:13px 0;border-bottom:1.5px solid var(--border);}
+.cart-item-img{width:60px;height:60px;background:var(--surface);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.cart-item-img svg{width:100%;height:100%;}
+.cart-item-info{flex:1;}
+.cart-item-brand{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px;}
+.cart-item-name{font-size:13px;font-weight:600;margin:2px 0;}
+.cart-item-price{font-family:'Clash Display',sans-serif;font-size:15px;font-weight:700;}
+.cart-item-remove{color:var(--muted);cursor:pointer;font-size:16px;padding:4px;align-self:start;}
+.cart-footer{padding:18px;border-top:2px solid var(--border);}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.cart-total-label{font-size:15px;font-weight:600;}
+.cart-total-price{font-family:'Clash Display',sans-serif;font-size:26px;font-weight:700;}
+.checkout-btn{display:block;width:100%;background:var(--black);color:var(--white);border:none;border-radius:11px;padding:15px;font-family:'Clash Display',sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:background .2s;}
+.checkout-btn:hover{background:#222;}
+.cart-secure{text-align:center;font-size:11px;color:var(--muted);margin-top:8px;}
+.page{display:none;}
+.page.active{display:block;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.detail-img-wrap{background:var(--surface);border-radius:18px;height:420px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border);padding:20px;}
+.detail-img-wrap svg{width:100%;height:100%;max-height:380px;}
+.detail-brand{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:7px;}
+.detail-name{font-family:'Clash Display',sans-serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1.5px;line-height:1;margin-bottom:14px;}
+.detail-price-wrap{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.detail-price{font-family:'Clash Display',sans-serif;font-size:40px;font-weight:700;}
+.detail-price-old{font-size:20px;color:var(--muted);text-decoration:line-through;}
+.detail-save{background:var(--accent2);color:var(--white);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;}
+.detail-desc{font-size:14px;color:#555;line-height:1.7;margin-bottom:22px;}
+.specs-list{background:var(--surface);border-radius:12px;padding:18px;margin-bottom:22px;}
+.spec-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.spec-row:last-child{border-bottom:none;}
+.spec-row span:first-child{color:var(--muted);}
+.spec-row span:last-child{font-weight:600;}
+.score-list{margin-bottom:22px;}
+.score-item{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.score-lbl{font-size:12px;color:var(--muted);width:90px;flex-shrink:0;}
+.score-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.score-fill{height:100%;background:var(--black);border-radius:3px;transition:width 1s ease;}
+.score-val{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;width:24px;text-align:right;}
+.qty-wrap{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.qty-btn{width:34px;height:34px;background:var(--surface);border:2px solid var(--border);border-radius:7px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:600;transition:all .2s;}
+.qty-btn:hover{border-color:var(--black);}
+.qty-num{font-family:'Clash Display',sans-serif;font-size:18px;font-weight:700;width:28px;text-align:center;}
+.detail-add{width:100%;background:var(--black);color:var(--white);border:none;border-radius:11px;padding:15px;font-family:'Clash Display',sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:9px;}
+.detail-add:hover{background:#222;}
+.detail-wish{width:100%;background:var(--surface);color:var(--text);border:2px solid var(--border);border-radius:11px;padding:13px;font-family:'Clash Display',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;}
+.detail-wish:hover{border-color:var(--black);}
+.trust-badges{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;}
+.trust-badge{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
+.back-btn{margin-bottom:18px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13px;transition:color .2s;}
+.back-btn:hover{color:var(--text);}
+.anim-in{animation:fadeUp .4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.empty-state{text-align:center;padding:70px 20px;color:var(--muted);}
+.empty-state .e-ico{font-size:52px;margin-bottom:14px;}
+.empty-state h3{font-family:'Clash Display',sans-serif;font-size:26px;letter-spacing:-.5px;color:var(--text);margin-bottom:8px;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.cats-grid{grid-template-columns:repeat(3,1fr);}.promo-inner{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}.header-inner .nav{display:none;}.search-bar{width:140px;}.cart-panel{width:100%;}.products-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}.detail-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.cats-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;}.detail-img-wrap{height:280px;}}
+</style>
+</head>
+<body>
+
+<div class="announce"><span class="announce-track">🎾 LIVRAISON GRATUITE dès 79€ &nbsp;|&nbsp; ⚡ NOUVEAUTÉS 2026 disponibles &nbsp;|&nbsp; 🏆 CODE PADL15 = -15% &nbsp;|&nbsp; 🚚 Expédition 24h &nbsp;|&nbsp; ↩️ Retours gratuits 30 jours &nbsp;|&nbsp; 🎾 LIVRAISON GRATUITE dès 79€ &nbsp;|&nbsp; ⚡ NOUVEAUTÉS 2026 disponibles &nbsp;|&nbsp; 🏆 CODE PADL15 = -15%</span></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="showPage('home')">PADL<span>.</span>STORE</div>
+    <nav class="nav">
+      <div class="nav-item active" onclick="showCat('Tous',this)">Tous</div>
+      <div class="nav-item" onclick="showCat('Raquettes',this)">Raquettes</div>
+      <div class="nav-item" onclick="showCat('Chaussures',this)">Chaussures</div>
+      <div class="nav-item" onclick="showCat('Balles',this)">Balles</div>
+      <div class="nav-item" onclick="showCat('Accessoires',this)">Accessoires</div>
+      <div class="nav-item" onclick="showCat('Vêtements',this)">Vêtements</div>
+    </nav>
+    <div class="header-actions">
+      <div class="search-bar"><span>🔍</span><input type="text" placeholder="Rechercher..." id="searchInput" oninput="doSearch()"></div>
+      <button class="cart-btn" onclick="toggleCart()">🛒 Panier <div class="cart-count" id="cartCount">0</div></button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<div class="page active" id="homePage">
+<section class="hero">
+  <div class="hero-bg-text">PADEL</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label">Collection 2026 · Nouvelles Arrivées</div>
+      <h1>JOUEZ<br>COMME<br>LES <span class="y">PROS</span></h1>
+      <p class="hero-desc">Raquettes, chaussures, balles et accessoires. Les meilleures marques mondiales au prix le plus juste. Livraison express 24h en France.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showCat('Raquettes',null)">Voir les raquettes →</button>
+        <button class="btn-secondary" onclick="showCat('Tous',null)">Tout le catalogue</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-n">60+</div><div class="hero-stat-l">Produits</div></div>
+        <div><div class="hero-stat-n">15+</div><div class="hero-stat-l">Marques</div></div>
+        <div><div class="hero-stat-n">24h</div><div class="hero-stat-l">Livraison</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card" onclick="openDetail(1)">
+        <div class="hero-card-svg">${SVG.bullpadel_vertex}</div>
+        <div><div class="hero-card-label">Bullpadel · Pro 2026</div><div class="hero-card-name">Vertex 05 2026</div><div class="hero-card-price">339,95€</div></div>
+      </div>
+      <div class="hero-card" onclick="openDetail(5)">
+        <div class="hero-card-svg">${SVG.nox_at10}</div>
+        <div><div class="hero-card-label">Nox · #1 Tapia 2026</div><div class="hero-card-name">AT10 Genius 12K</div><div class="hero-card-price">324,99€</div></div>
+      </div>
+      <div class="hero-card" onclick="openDetail(20)">
+        <div class="hero-card-svg">${SVG.asics_shoe}</div>
+        <div><div class="hero-card-label">Asics · Chaussures 2026</div><div class="hero-card-name">Gel-Padel Pro 5</div><div class="hero-card-price">129,99€</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="brands"><div class="brands-track" id="bt">
+  <span class="brand-item">BULLPADEL</span><span class="brand-item">HEAD</span><span class="brand-item">BABOLAT</span>
+  <span class="brand-item">NOX</span><span class="brand-item">ADIDAS</span><span class="brand-item">WILSON</span>
+  <span class="brand-item">SIUX</span><span class="brand-item">STARVIE</span><span class="brand-item">ASICS</span>
+  <span class="brand-item">MUNICH</span><span class="brand-item">TECNIFIBRE</span><span class="brand-item">DUNLOP</span>
+  <span class="brand-item">BULLPADEL</span><span class="brand-item">HEAD</span><span class="brand-item">BABOLAT</span>
+  <span class="brand-item">NOX</span><span class="brand-item">ADIDAS</span><span class="brand-item">WILSON</span>
+  <span class="brand-item">SIUX</span><span class="brand-item">STARVIE</span><span class="brand-item">ASICS</span>
+  <span class="brand-item">MUNICH</span><span class="brand-item">TECNIFIBRE</span><span class="brand-item">DUNLOP</span>
+</div></div>
+
+<div class="section">
+  <div class="section-header"><div><div class="section-title">Nos <em>Catégories</em></div><div class="section-sub">Tout l'équipement padel en un seul endroit</div></div></div>
+  <div class="cats-grid">
+    <div class="cat-card featured" onclick="showCat('Raquettes',null)"><div class="cat-ico">🎾</div><div class="cat-name" style="color:#fff">Raquettes</div><div class="cat-count">2024·2025·2026</div></div>
+    <div class="cat-card" onclick="showCat('Chaussures',null)"><div class="cat-ico">👟</div><div class="cat-name">Chaussures</div><div class="cat-count">Toutes surfaces</div></div>
+    <div class="cat-card" onclick="showCat('Balles',null)"><div class="cat-ico">🟡</div><div class="cat-name">Balles</div><div class="cat-count">Compétition & loisir</div></div>
+    <div class="cat-card" onclick="showCat('Accessoires',null)"><div class="cat-ico">🎒</div><div class="cat-name">Accessoires</div><div class="cat-count">Sacs, grips...</div></div>
+    <div class="cat-card" onclick="showCat('Vêtements',null)"><div class="cat-ico">👕</div><div class="cat-name">Vêtements</div><div class="cat-count">Tech & Style</div></div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0">
+  <div class="section-header"><div><div class="section-title">Meilleures <em>Ventes</em></div><div class="section-sub">Les incontournables de la saison 2026</div></div><div class="see-all" onclick="showCat('Tous',null)">Voir tout →</div></div>
+  <div class="products-grid" id="homeGrid"></div>
+</div>
+
+<div class="promo-banner">
+  <div class="promo-inner">
+    <div>
+      <div class="promo-label">Pourquoi PADL.STORE ?</div>
+      <h2>PRIX <span>IMBATTABLES</span><br>QUALITÉ GARANTIE</h2>
+      <p>Nous travaillons directement avec les distributeurs officiels pour vous offrir les meilleurs prix. Tous nos produits sont 100% authentiques avec garantie constructeur.</p>
+      <button class="btn-primary" onclick="showCat('Raquettes',null)">Découvrir les offres →</button>
+    </div>
+    <div class="promo-right">
+      <div class="promo-stat"><div class="promo-stat-n">-30%</div><div class="promo-stat-l">vs prix boutique</div></div>
+      <div class="promo-stat"><div class="promo-stat-n">24h</div><div class="promo-stat-l">Livraison express</div></div>
+      <div class="promo-stat"><div class="promo-stat-n">30j</div><div class="promo-stat-l">Retour gratuit</div></div>
+      <div class="promo-stat"><div class="promo-stat-n">100%</div><div class="promo-stat-l">Produits officiels</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter"><div class="newsletter-inner">
+  <h2>-10% sur votre 1ère commande</h2>
+  <p>Inscrivez-vous et recevez votre code immédiatement. Soyez les premiers informés des nouveautés 2026.</p>
+  <div class="newsletter-form"><input type="email" placeholder="votre@email.fr"><button onclick="alert('Code PADL10 envoyé ! 🎾')">Je m\'inscris</button></div>
+</div></div>
+</div>
+
+<!-- CATALOGUE -->
+<div class="page" id="catalogPage">
+  <div class="section">
+    <div class="section-header">
+      <div><div class="section-title" id="catTitle">Tous les <em>Produits</em></div><div class="section-sub" id="catSub">Notre catalogue complet</div></div>
+      <div id="catCountEl" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);"></div>
+    </div>
+    <div class="filters-bar" id="filtersBar">
+      <div class="filter-btn active" onclick="setFilter('Tous',this)">Tous</div>
+      <div class="filter-btn" onclick="setFilter('Pro',this)">🔴 Pro</div>
+      <div class="filter-btn" onclick="setFilter('Intermédiaire',this)">🟠 Intermédiaire</div>
+      <div class="filter-btn" onclick="setFilter('Initiation',this)">🟢 Initiation</div>
+      <div class="filter-btn" onclick="setFilter('2026',this)">2026</div>
+      <div class="filter-btn" onclick="setFilter('2025',this)">2025</div>
+      <div class="filter-btn" onclick="setFilter('Promo',this)">🔥 Promo</div>
+      <select class="sort-select" onchange="setSort(this.value)">
+        <option value="default">Trier par défaut</option>
+        <option value="price-asc">Prix ↑</option>
+        <option value="price-desc">Prix ↓</option>
+        <option value="promo">Promotions d'abord</option>
+      </select>
+    </div>
+    <div class="products-grid" id="catalogGrid"></div>
+    <div id="emptyState" class="empty-state" style="display:none"><div class="e-ico">🎾</div><h3>Aucun résultat</h3><p>Essayez un autre terme ou réinitialisez les filtres.</p></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div class="page" id="detailPage">
+  <div class="section">
+    <div class="back-btn" onclick="goBack()">← Retour au catalogue</div>
+    <div class="detail-grid" id="detailContent"></div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+  <div class="cart-panel">
+    <div class="cart-header"><div class="cart-title">Mon Panier 🛒</div><button class="cart-close" onclick="toggleCart()">✕</button></div>
+    <div class="cart-items" id="cartItems"><div class="cart-empty"><div style="font-size:44px;margin-bottom:10px">🎾</div><p>Votre panier est vide</p></div></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span class="cart-total-label">Total</span><span class="cart-total-price" id="cartTotal">0€</span></div>
+      <button class="checkout-btn" onclick="alert('Paiement sécurisé — Stripe & PayPal intégration prochainement !')">Commander →</button>
+      <div class="cart-secure">🔒 Paiement 100% sécurisé · CB · PayPal · Virement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">PADL<span>.</span>STORE</div>
+        <div class="footer-desc">La boutique padel qui casse les prix. Équipement officiel 100% authentique, livraison express, retour gratuit 30 jours.</div>
+        <div class="footer-social"><div class="social-btn">📘</div><div class="social-btn">📸</div><div class="social-btn">🎵</div><div class="social-btn">▶️</div></div>
+      </div>
+      <div><h4>Catalogue</h4><div class="footer-links">
+        <div class="footer-link" onclick="showCat('Raquettes',null)">Raquettes 2026</div>
+        <div class="footer-link" onclick="showCat('Chaussures',null)">Chaussures</div>
+        <div class="footer-link" onclick="showCat('Balles',null)">Balles</div>
+        <div class="footer-link" onclick="showCat('Accessoires',null)">Accessoires</div>
+        <div class="footer-link" onclick="showCat('Vêtements',null)">Vêtements</div>
+      </div></div>
+      <div><h4>Service</h4><div class="footer-links">
+        <div class="footer-link">Livraison & Retours</div>
+        <div class="footer-link">Guide des tailles</div>
+        <div class="footer-link">Choisir sa raquette</div>
+        <div class="footer-link">Contact</div>
+        <div class="footer-link">FAQ</div>
+      </div></div>
+      <div><h4>Marques</h4><div class="footer-links">
+        <div class="footer-link">Bullpadel</div><div class="footer-link">Head</div>
+        <div class="footer-link">Nox</div><div class="footer-link">Babolat</div>
+        <div class="footer-link">Adidas</div><div class="footer-link">Wilson</div>
+        <div class="footer-link">Siux</div><div class="footer-link">StarVie</div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 PADL.STORE — Tous droits réservés</div>
+      <div class="footer-badges"><div class="footer-badge">🔒 SSL</div><div class="footer-badge">✅ OFFICIEL</div><div class="footer-badge">🚚 24H</div><div class="footer-badge">↩️ 30J</div></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// SVG ILLUSTRATIONS
+// ═══════════════════════════════════════
+const SVG = {
+  bullpadel_vertex: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bv1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a1a1a"/><stop offset="50%" style="stop-color:#2d2d2d"/><stop offset="100%" style="stop-color:#111"/></linearGradient><linearGradient id="bv2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#c8a000"/><stop offset="50%" style="stop-color:#ffd700"/><stop offset="100%" style="stop-color:#c8a000"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#1a1a00"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#222" opacity="0.5"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#ffd700" opacity="0.4"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#ffd700" opacity="0.4"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#1a1a00"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#bv2)" stroke="#c8a000" stroke-width="1"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#bv1)"/><g stroke="#ffd700" stroke-width="0.5" opacity="0.45"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><text x="100" y="120" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#ffd700" opacity="0.9">BULLPADEL</text><text x="100" y="138" text-anchor="middle" font-family="Arial" font-size="9" fill="#ffd700" opacity="0.7">VERTEX 05</text><text x="100" y="153" text-anchor="middle" font-family="Arial" font-size="7" fill="#aa8800" opacity="0.7">JUAN TELLO · 2026</text></svg>`,
+
+  bullpadel_hack: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bh1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#001a4d"/><stop offset="50%" style="stop-color:#003080"/><stop offset="100%" style="stop-color:#001a4d"/></linearGradient><linearGradient id="bh2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#0050c8"/><stop offset="50%" style="stop-color:#4488ff"/><stop offset="100%" style="stop-color:#0050c8"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#001a4d"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#002060" opacity="0.8"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#4488ff" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#4488ff" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#001a4d"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#bh2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#bh1)"/><g stroke="#4488ff" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><text x="100" y="120" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#4488ff" opacity="0.9">BULLPADEL</text><text x="100" y="138" text-anchor="middle" font-family="Arial" font-size="9" fill="#88bbff" opacity="0.8">HACK 04</text><text x="100" y="153" text-anchor="middle" font-family="Arial" font-size="7" fill="#5577cc" opacity="0.7">PAQUITO NAVARRO</text></svg>`,
+
+  bullpadel_neuron: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bn1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#003322"/><stop offset="50%" style="stop-color:#005533"/><stop offset="100%" style="stop-color:#002211"/></linearGradient><linearGradient id="bn2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#00aa55"/><stop offset="50%" style="stop-color:#00dd77"/><stop offset="100%" style="stop-color:#00aa55"/></linearGradient></defs><rect x="82" y="235" width="36" height="75" rx="8" fill="#003322"/><rect x="86" y="240" width="28" height="65" rx="6" fill="#004433" opacity="0.8"/><path d="M72 200 Q100 220 128 200 L128 235 L72 235 Z" fill="#003322"/><ellipse cx="100" cy="120" rx="60" ry="108" fill="url(#bn2)"/><ellipse cx="100" cy="120" rx="53" ry="101" fill="url(#bn1)"/><g stroke="#00dd77" stroke-width="0.5" opacity="0.4"><line x1="65" y1="55" x2="65" y2="205"/><line x1="76" y1="32" x2="76" y2="214"/><line x1="88" y1="22" x2="88" y2="218"/><line x1="100" y1="19" x2="100" y2="220"/><line x1="112" y1="22" x2="112" y2="218"/><line x1="124" y1="32" x2="124" y2="214"/><line x1="135" y1="55" x2="135" y2="205"/><line x1="47" y1="75" x2="153" y2="75"/><line x1="47" y1="95" x2="153" y2="95"/><line x1="47" y1="115" x2="153" y2="115"/><line x1="47" y1="135" x2="153" y2="135"/><line x1="47" y1="155" x2="153" y2="155"/><line x1="48" y1="175" x2="152" y2="175"/><line x1="52" y1="195" x2="148" y2="195"/></g><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#00dd77" opacity="0.9">BULLPADEL</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="#88ffcc" opacity="0.8">NEURON 02</text><text x="100" y="145" text-anchor="middle" font-family="Arial" font-size="7" fill="#00aa55" opacity="0.7">F. CHINGOTTO · 2026</text></svg>`,
+
+  nox_at10: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="nox1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a0000"/><stop offset="40%" style="stop-color:#2d0000"/><stop offset="100%" style="stop-color:#0a0000"/></linearGradient><linearGradient id="nox2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#cc0000"/><stop offset="50%" style="stop-color:#ff2222"/><stop offset="100%" style="stop-color:#cc0000"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#1a0000"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#2d0000" opacity="0.8"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#ff2222" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#ff2222" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#1a0000"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#nox2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#nox1)"/><g stroke="#cc0000" stroke-width="0.4" opacity="0.35"><line x1="52" y1="60" x2="148" y2="60"/><line x1="52" y1="75" x2="148" y2="75"/><line x1="52" y1="90" x2="148" y2="90"/><line x1="52" y1="105" x2="148" y2="105"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="135" x2="148" y2="135"/><line x1="52" y1="150" x2="148" y2="150"/><line x1="52" y1="165" x2="148" y2="165"/><line x1="52" y1="180" x2="148" y2="180"/><line x1="68" y1="30" x2="68" y2="200"/><line x1="82" y1="28" x2="82" y2="201"/><line x1="96" y1="28" x2="96" y2="201"/><line x1="110" y1="28" x2="110" y2="201"/><line x1="124" y1="30" x2="124" y2="200"/><line x1="136" y1="38" x2="136" y2="198"/></g><text x="100" y="112" text-anchor="middle" font-family="Arial Black" font-size="18" font-weight="900" fill="#ff2222" opacity="0.95">NOX</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="8" fill="#ff6666" opacity="0.8">AT10 LUXURY GENIUS</text><text x="100" y="144" text-anchor="middle" font-family="Arial" font-size="7" fill="#cc0000" opacity="0.7">12K ALUM · TAPIA · 2026</text><ellipse cx="100" cy="125" rx="26" ry="20" fill="none" stroke="#ff2222" stroke-width="1.5" opacity="0.2"/></svg>`,
+
+  nox_ml10: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ml1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0a0a1a"/><stop offset="50%" style="stop-color:#1a1a33"/><stop offset="100%" style="stop-color:#050510"/></linearGradient><linearGradient id="ml2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#3344cc"/><stop offset="50%" style="stop-color:#5566ff"/><stop offset="100%" style="stop-color:#3344cc"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#0a0a1a"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#5566ff" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#5566ff" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#0a0a1a"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#ml2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#ml1)"/><g stroke="#5566ff" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><text x="100" y="112" text-anchor="middle" font-family="Arial Black" font-size="18" font-weight="900" fill="white" opacity="0.9">NOX</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="8" fill="#aabbff" opacity="0.8">ML10 PRO CUP</text><text x="100" y="144" text-anchor="middle" font-family="Arial" font-size="7" fill="#5566ff" opacity="0.7">M. LAMPERTI · 2026</text></svg>`,
+
+  head_extreme: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hd1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0a0a0a"/><stop offset="50%" style="stop-color:#1a1a1a"/><stop offset="100%" style="stop-color:#050505"/></linearGradient><linearGradient id="hd2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#444"/><stop offset="50%" style="stop-color:#888"/><stop offset="100%" style="stop-color:#444"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#111"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#222" opacity="0.8"/><rect x="88" y="238" width="8" height="60" rx="4" fill="#fff" opacity="0.15"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#111"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#hd2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#hd1)"/><g stroke="#777" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><circle cx="100" cy="65" r="14" fill="none" stroke="white" stroke-width="2" opacity="0.5"/><text x="100" y="69" text-anchor="middle" font-family="Arial Black" font-size="11" fill="white" opacity="0.6">H</text><text x="100" y="115" text-anchor="middle" font-family="Arial Black" font-size="14" font-weight="900" fill="white" opacity="0.95">HEAD</text><text x="100" y="132" text-anchor="middle" font-family="Arial" font-size="8" fill="#aaa" opacity="0.8">EXTREME PRO 2026</text><text x="100" y="147" text-anchor="middle" font-family="Arial" font-size="7" fill="#666" opacity="0.7">A. COELLO</text></svg>`,
+
+  head_speed: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hs1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#001133"/><stop offset="50%" style="stop-color:#002255"/><stop offset="100%" style="stop-color:#000a22"/></linearGradient><linearGradient id="hs2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#0066cc"/><stop offset="50%" style="stop-color:#0099ff"/><stop offset="100%" style="stop-color:#0066cc"/></linearGradient></defs><rect x="82" y="235" width="36" height="75" rx="8" fill="#001133"/><path d="M72 200 Q100 220 128 200 L128 235 L72 235 Z" fill="#001133"/><ellipse cx="100" cy="120" rx="60" ry="108" fill="url(#hs2)"/><ellipse cx="100" cy="120" rx="53" ry="101" fill="url(#hs1)"/><g stroke="#0099ff" stroke-width="0.5" opacity="0.4"><line x1="65" y1="55" x2="65" y2="205"/><line x1="76" y1="32" x2="76" y2="214"/><line x1="88" y1="22" x2="88" y2="218"/><line x1="100" y1="19" x2="100" y2="220"/><line x1="112" y1="22" x2="112" y2="218"/><line x1="124" y1="32" x2="124" y2="214"/><line x1="135" y1="55" x2="135" y2="205"/><line x1="47" y1="75" x2="153" y2="75"/><line x1="47" y1="95" x2="153" y2="95"/><line x1="47" y1="115" x2="153" y2="115"/><line x1="47" y1="135" x2="153" y2="135"/><line x1="47" y1="155" x2="153" y2="155"/><line x1="48" y1="175" x2="152" y2="175"/><line x1="52" y1="195" x2="148" y2="195"/></g><circle cx="100" cy="62" r="14" fill="none" stroke="white" stroke-width="2" opacity="0.5"/><text x="100" y="66" text-anchor="middle" font-family="Arial Black" font-size="11" fill="white" opacity="0.6">H</text><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="14" font-weight="900" fill="white" opacity="0.95">HEAD</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="8" fill="#66ccff" opacity="0.8">SPEED MOTION 2025</text><text x="100" y="144" text-anchor="middle" font-family="Arial" font-size="7" fill="#0066cc" opacity="0.7">⭐ BEST HYBRID 2025</text></svg>`,
+
+  adidas_metalbone: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f5f5f5"/><stop offset="50%" style="stop-color:#e8e8e8"/><stop offset="100%" style="stop-color:#d8d8d8"/></linearGradient><linearGradient id="ad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#cc5500"/><stop offset="50%" style="stop-color:#ff7700"/><stop offset="100%" style="stop-color:#cc5500"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#cc5500"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#e06000" opacity="0.8"/><rect x="88" y="238" width="8" height="60" rx="4" fill="#fff" opacity="0.3"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#cc5500"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#ad2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#ad1)"/><g stroke="#ff7700" stroke-width="0.5" opacity="0.3"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><g fill="#ff7700" opacity="0.85"><rect x="76" y="68" width="4" height="32" rx="2"/><rect x="98" y="60" width="4" height="40" rx="2"/><rect x="120" y="68" width="4" height="32" rx="2"/></g><text x="100" y="125" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#cc5500" opacity="0.9">ADIDAS</text><text x="100" y="141" text-anchor="middle" font-family="Arial" font-size="8" fill="#cc5500" opacity="0.7">METALBONE 3.4 2025</text><text x="100" y="155" text-anchor="middle" font-family="Arial" font-size="7" fill="#aa4400" opacity="0.7">ALE GALÁN</text></svg>`,
+
+  babolat_air: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bab1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#001a8c"/><stop offset="50%" style="stop-color:#0033bb"/><stop offset="100%" style="stop-color:#001a8c"/></linearGradient><linearGradient id="bab2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ffcc00"/><stop offset="50%" style="stop-color:#ffe033"/><stop offset="100%" style="stop-color:#ffcc00"/></linearGradient></defs><rect x="82" y="235" width="36" height="75" rx="8" fill="#001a8c"/><rect x="86" y="240" width="28" height="65" rx="6" fill="#0022aa" opacity="0.8"/><rect x="88" y="243" width="8" height="55" rx="4" fill="#ffcc00" opacity="0.4"/><path d="M72 200 Q100 220 128 200 L128 235 L72 235 Z" fill="#001a8c"/><ellipse cx="100" cy="120" rx="60" ry="108" fill="url(#bab2)"/><ellipse cx="100" cy="120" rx="53" ry="101" fill="url(#bab1)"/><g stroke="#ffcc00" stroke-width="0.5" opacity="0.4"><line x1="65" y1="55" x2="65" y2="205"/><line x1="76" y1="32" x2="76" y2="214"/><line x1="88" y1="22" x2="88" y2="218"/><line x1="100" y1="19" x2="100" y2="220"/><line x1="112" y1="22" x2="112" y2="218"/><line x1="124" y1="32" x2="124" y2="214"/><line x1="135" y1="55" x2="135" y2="205"/><line x1="47" y1="75" x2="153" y2="75"/><line x1="47" y1="95" x2="153" y2="95"/><line x1="47" y1="115" x2="153" y2="115"/><line x1="47" y1="135" x2="153" y2="135"/><line x1="47" y1="155" x2="153" y2="155"/><line x1="48" y1="175" x2="152" y2="175"/><line x1="52" y1="195" x2="148" y2="195"/></g><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#ffcc00" opacity="0.95">BABOLAT</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="9" fill="#ffdd55" opacity="0.8">AIR VIPER 2026</text><text x="100" y="145" text-anchor="middle" font-family="Arial" font-size="7" fill="#cc9900" opacity="0.7">VIBRASORB TECHNOLOGY</text></svg>`,
+
+  babolat_technical: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bt1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a0a00"/><stop offset="50%" style="stop-color:#331500"/><stop offset="100%" style="stop-color:#0f0500"/></linearGradient><linearGradient id="bt2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#cc3300"/><stop offset="50%" style="stop-color:#ff5500"/><stop offset="100%" style="stop-color:#cc3300"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#1a0a00"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#2d1500" opacity="0.8"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#ff5500" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#ff5500" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#1a0a00"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#bt2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#bt1)"/><g stroke="#ff5500" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#ffcc00" opacity="0.95">BABOLAT</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="7.5" fill="#ff8855" opacity="0.8">TECHNICAL VIPER</text><text x="100" y="144" text-anchor="middle" font-family="Arial" font-size="7" fill="#ff5500" opacity="0.7">JUAN LEBRÓN · 2025</text></svg>`,
+
+  wilson_bela: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wil1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#8b0000"/><stop offset="50%" style="stop-color:#aa0000"/><stop offset="100%" style="stop-color:#6b0000"/></linearGradient><linearGradient id="wil2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#cc0022"/><stop offset="50%" style="stop-color:#ff1133"/><stop offset="100%" style="stop-color:#cc0022"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#6b0000"/><rect x="86" y="235" width="28" height="70" rx="6" fill="#8b0000" opacity="0.8"/><rect x="88" y="238" width="8" height="60" rx="4" fill="#ff4455" opacity="0.25"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#6b0000"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#wil2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#wil1)"/><g stroke="#ff4455" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><path d="M85 155 L100 148 L115 155 L100 162 Z" fill="none" stroke="white" stroke-width="1.5" opacity="0.35"/><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="13" font-weight="900" fill="white" opacity="0.95">WILSON</text><text x="100" y="131" text-anchor="middle" font-family="Arial" font-size="8" fill="#ffaaaa" opacity="0.8">BELA PRO V2</text><text x="100" y="145" text-anchor="middle" font-family="Arial" font-size="7" fill="#cc0022" opacity="0.7">F. BELASTEGUIN</text></svg>`,
+
+  siux_diablo: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sx1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0a0a0a"/><stop offset="50%" style="stop-color:#1a0800"/><stop offset="100%" style="stop-color:#050505"/></linearGradient><linearGradient id="sx2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#cc4400"/><stop offset="50%" style="stop-color:#ff6600"/><stop offset="100%" style="stop-color:#cc4400"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#0a0a0a"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#ff6600" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#ff6600" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#0a0a0a"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#sx2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#sx1)"/><g stroke="#ff6600" stroke-width="0.5" opacity="0.35"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><path d="M88 72 L82 57 L92 68 M112 72 L118 57 L108 68" stroke="#ff6600" stroke-width="2" fill="none" opacity="0.8"/><text x="100" y="113" text-anchor="middle" font-family="Arial Black" font-size="14" font-weight="900" fill="#ff6600" opacity="0.95">SIUX</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="8" fill="#ff9944" opacity="0.8">DIABLO PRO 2026</text><text x="100" y="144" text-anchor="middle" font-family="Arial" font-size="7" fill="#cc4400" opacity="0.7">T. LIBAAK</text></svg>`,
+
+  starvie_titania: `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sv1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a0030"/><stop offset="50%" style="stop-color:#2d0050"/><stop offset="100%" style="stop-color:#0f0020"/></linearGradient><linearGradient id="sv2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#7700cc"/><stop offset="50%" style="stop-color:#9933ff"/><stop offset="100%" style="stop-color:#7700cc"/></linearGradient></defs><rect x="82" y="230" width="36" height="80" rx="8" fill="#1a0030"/><rect x="90" y="240" width="6" height="55" rx="3" fill="#9933ff" opacity="0.5"/><rect x="104" y="240" width="6" height="55" rx="3" fill="#9933ff" opacity="0.5"/><path d="M75 195 Q100 215 125 195 L125 230 L75 230 Z" fill="#1a0030"/><path d="M100 20 L155 100 L155 190 Q155 210 135 210 L65 210 Q45 210 45 190 L45 100 Z" fill="url(#sv2)"/><path d="M100 28 L148 103 L148 188 Q148 202 132 202 L68 202 Q52 202 52 188 L52 103 Z" fill="url(#sv1)"/><g stroke="#9933ff" stroke-width="0.5" opacity="0.4"><line x1="70" y1="50" x2="70" y2="195"/><line x1="82" y1="35" x2="82" y2="198"/><line x1="94" y1="28" x2="94" y2="200"/><line x1="106" y1="28" x2="106" y2="200"/><line x1="118" y1="35" x2="118" y2="198"/><line x1="130" y1="50" x2="130" y2="195"/><line x1="55" y1="80" x2="145" y2="80"/><line x1="52" y1="100" x2="148" y2="100"/><line x1="52" y1="120" x2="148" y2="120"/><line x1="52" y1="140" x2="148" y2="140"/><line x1="52" y1="160" x2="148" y2="160"/><line x1="53" y1="180" x2="147" y2="180"/></g><polygon points="100,60 104,72 116,72 107,79 110,91 100,84 90,91 93,79 84,72 96,72" fill="none" stroke="#9933ff" stroke-width="1.5" opacity="0.8"/><text x="100" y="112" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#cc88ff" opacity="0.95">STARVIE</text><text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="8" fill="#aa66dd" opacity="0.8">TITANIA PRO 2026</text></svg>`,
+
+  asics_shoe: `<svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="as1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f0f0f0"/><stop offset="100%" style="stop-color:#d8d8d8"/></linearGradient><linearGradient id="as2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#1a6bcc"/><stop offset="100%" style="stop-color:#0044aa"/></linearGradient></defs><path d="M20 138 Q26 155 58 158 L168 154 Q184 150 180 138 L172 130 L26 130 Z" fill="url(#as2)"/><path d="M26 130 L172 130 L172 138 L26 138 Z" fill="#003388"/><path d="M30 130 L30 88 Q30 60 62 52 L128 48 Q158 45 168 67 L172 88 L172 130 Z" fill="url(#as1)"/><rect x="84" y="52" width="32" height="55" rx="3" fill="#ebebeb"/><g stroke="#1a6bcc" stroke-width="1.5" stroke-linecap="round"><line x1="78" y1="65" x2="122" y2="65"/><line x1="76" y1="78" x2="124" y2="78"/><line x1="76" y1="91" x2="124" y2="91"/><line x1="78" y1="104" x2="122" y2="104"/></g><path d="M35 114 Q78 100 148 108" stroke="#1a6bcc" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M33 124 Q78 113 150 120" stroke="#1a6bcc" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.4"/><text x="100" y="148" text-anchor="middle" font-family="Arial Black" font-size="7.5" fill="white" font-weight="900">GEL-PADEL PRO 5</text></svg>`,
+
+  munich_shoe: `<svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mu1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#111"/><stop offset="100%" style="stop-color:#2a2a2a"/></linearGradient><linearGradient id="mu2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#ff4400"/><stop offset="100%" style="stop-color:#cc2200"/></linearGradient></defs><path d="M20 138 Q26 155 58 158 L168 154 Q184 150 180 138 L172 130 L26 130 Z" fill="url(#mu2)"/><path d="M26 130 L172 130 L172 138 L26 138 Z" fill="#aa1100"/><path d="M30 130 L30 88 Q30 60 62 52 L128 48 Q158 45 168 67 L172 88 L172 130 Z" fill="url(#mu1)"/><rect x="84" y="52" width="32" height="55" rx="3" fill="#222"/><g stroke="#ff4400" stroke-width="1.5" stroke-linecap="round"><line x1="78" y1="65" x2="122" y2="65"/><line x1="76" y1="78" x2="124" y2="78"/><line x1="76" y1="91" x2="124" y2="91"/><line x1="78" y1="104" x2="122" y2="104"/></g><path d="M38 106 L52 86 L66 104 L80 86 L94 104 L108 86 L122 104 L136 86 L150 106" stroke="#ff4400" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="100" y="148" text-anchor="middle" font-family="Arial Black" font-size="7.5" fill="white" font-weight="900">MUNICH PADX 11 2026</text></svg>`,
+
+  adidas_shoe: `<svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ads1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fff"/><stop offset="100%" style="stop-color:#eee"/></linearGradient><linearGradient id="ads2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#222"/><stop offset="100%" style="stop-color:#000"/></linearGradient></defs><path d="M20 138 Q26 155 58 158 L168 154 Q184 150 180 138 L172 130 L26 130 Z" fill="url(#ads2)"/><path d="M26 130 L172 130 L172 138 L26 138 Z" fill="#111"/><path d="M30 130 L30 88 Q30 60 62 52 L128 48 Q158 45 168 67 L172 88 L172 130 Z" fill="url(#ads1)"/><rect x="84" y="52" width="32" height="55" rx="3" fill="#f5f5f5"/><g stroke="#222" stroke-width="1.5" stroke-linecap="round"><line x1="78" y1="65" x2="122" y2="65"/><line x1="76" y1="78" x2="124" y2="78"/><line x1="76" y1="91" x2="124" y2="91"/><line x1="78" y1="104" x2="122" y2="104"/></g><g fill="#222" opacity="0.8"><rect x="54" y="82" width="3.5" height="28" rx="1.75" transform="rotate(-15 54 82)"/><rect x="76" y="78" width="3.5" height="35" rx="1.75" transform="rotate(-15 76 78)"/><rect x="98" y="82" width="3.5" height="28" rx="1.75" transform="rotate(-15 98 82)"/></g><text x="100" y="148" text-anchor="middle" font-family="Arial Black" font-size="7.5" fill="white" font-weight="900">ADIDAS UBERSONIC 4</text></svg>`,
+
+  head_ball: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="hball" cx="38%" cy="32%" r="65%"><stop offset="0%" style="stop-color:#ffe570"/><stop offset="55%" style="stop-color:#f5c800"/><stop offset="100%" style="stop-color:#c89000"/></radialGradient></defs><circle cx="100" cy="100" r="74" fill="url(#hball)"/><circle cx="100" cy="100" r="74" fill="none" stroke="#d4a400" stroke-width="2"/><path d="M100 26 Q142 58 142 100 Q142 142 100 174" stroke="white" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M100 26 Q58 58 58 100 Q58 142 100 174" stroke="white" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M26 100 Q62 90 100 100 Q138 110 174 100" stroke="white" stroke-width="1.8" fill="none" opacity="0.35"/><circle cx="100" cy="100" r="24" fill="white" opacity="0.92"/><text x="100" y="97" text-anchor="middle" font-family="Arial Black" font-size="9" font-weight="900" fill="#1a1a1a">HEAD</text><text x="100" y="109" text-anchor="middle" font-family="Arial" font-size="6" fill="#555">PRO S+ · WPT</text></svg>`,
+
+  nox_ball: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="nball" cx="38%" cy="32%" r="65%"><stop offset="0%" style="stop-color:#ffe570"/><stop offset="55%" style="stop-color:#f5c800"/><stop offset="100%" style="stop-color:#c89000"/></radialGradient></defs><circle cx="100" cy="100" r="74" fill="url(#nball)"/><path d="M100 26 Q142 58 142 100 Q142 142 100 174" stroke="white" stroke-width="2.5" fill="none" opacity="0.55"/><path d="M100 26 Q58 58 58 100 Q58 142 100 174" stroke="white" stroke-width="2.5" fill="none" opacity="0.55"/><circle cx="100" cy="100" r="24" fill="#cc0000" opacity="0.9"/><text x="100" y="97" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="white">NOX</text><text x="100" y="110" text-anchor="middle" font-family="Arial" font-size="6" fill="#ffaaaa">PRO TITANIUM</text></svg>`,
+
+  bullpadel_bag: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bag1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#0f0f1e"/></linearGradient></defs><rect x="18" y="48" width="164" height="134" rx="18" fill="url(#bag1)"/><path d="M58 48 L58 28 Q58 18 68 18 L132 18 Q142 18 142 28 L142 48" fill="none" stroke="#ffd700" stroke-width="4" stroke-linecap="round"/><rect x="32" y="100" width="136" height="68" rx="10" fill="#252545"/><rect x="32" y="100" width="136" height="9" rx="5" fill="#ffd700" opacity="0.55"/><line x1="32" y1="104" x2="168" y2="104" stroke="#ffd700" stroke-width="2" stroke-dasharray="7,4"/><circle cx="100" cy="104" r="5.5" fill="#ffd700"/><text x="100" y="83" text-anchor="middle" font-family="Arial Black" font-size="11" font-weight="900" fill="#ffd700" opacity="0.9">BULLPADEL</text><rect x="18" y="80" width="9" height="62" rx="4.5" fill="#ffd700" opacity="0.25"/><rect x="173" y="80" width="9" height="62" rx="4.5" fill="#ffd700" opacity="0.25"/></svg>`,
+
+  head_bag: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hbag" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#003366"/><stop offset="100%" style="stop-color:#001a44"/></linearGradient></defs><rect x="18" y="48" width="164" height="134" rx="18" fill="url(#hbag)"/><path d="M58 48 L58 28 Q58 18 68 18 L132 18 Q142 18 142 28 L142 48" fill="none" stroke="#0099ff" stroke-width="4" stroke-linecap="round"/><rect x="32" y="100" width="136" height="68" rx="10" fill="#002255"/><rect x="32" y="100" width="136" height="9" rx="5" fill="#0099ff" opacity="0.55"/><circle cx="100" cy="104" r="5.5" fill="#0099ff"/><circle cx="100" cy="83" r="16" fill="none" stroke="white" stroke-width="2" opacity="0.6"/><text x="100" y="87" text-anchor="middle" font-family="Arial Black" font-size="12" fill="white" opacity="0.7">H</text></svg>`,
+
+  grip: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gr1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fff"/><stop offset="100%" style="stop-color:#ddd"/></linearGradient></defs><ellipse cx="100" cy="76" rx="68" ry="22" fill="#bbb"/><rect x="32" y="76" width="136" height="82" fill="url(#gr1)"/><ellipse cx="100" cy="158" rx="68" ry="22" fill="#e0e0e0"/><ellipse cx="100" cy="76" rx="68" ry="22" fill="none" stroke="#aaa" stroke-width="1.5"/><ellipse cx="100" cy="76" rx="22" ry="7" fill="#999"/><ellipse cx="100" cy="76" rx="22" ry="7" fill="none" stroke="#888" stroke-width="2"/><text x="100" y="128" text-anchor="middle" font-family="Arial" font-size="9" fill="#666" font-weight="600">SURGRIP</text><text x="100" y="142" text-anchor="middle" font-family="Arial" font-size="8" fill="#888">Blanc x4 · 4ON</text></svg>`,
+
+  tshirt: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ts1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0033aa"/><stop offset="100%" style="stop-color:#001a77"/></linearGradient></defs><path d="M60 30 Q80 22 100 22 Q120 22 140 30 L165 65 L148 75 L148 165 Q148 175 138 175 L62 175 Q52 175 52 165 L52 75 L35 65 Z" fill="url(#ts1)"/><path d="M75 30 Q88 48 100 48 Q112 48 125 30" stroke="#0044cc" stroke-width="2" fill="none"/><text x="100" y="112" text-anchor="middle" font-family="Arial Black" font-size="11" fill="white" opacity="0.9">NOX</text><text x="100" y="128" text-anchor="middle" font-family="Arial" font-size="8" fill="#aabbff" opacity="0.7">TECH PRO 2026</text></svg>`,
+
+  short: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sh1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#222"/><stop offset="100%" style="stop-color:#111"/></linearGradient></defs><path d="M40 40 L40 140 Q40 160 60 160 L95 160 L100 110 L105 160 L140 160 Q160 160 160 140 L160 40 Z" fill="url(#sh1)"/><rect x="40" y="40" width="120" height="12" rx="6" fill="#333"/><text x="100" y="95" text-anchor="middle" font-family="Arial Black" font-size="11" fill="white" opacity="0.7">HEAD</text><text x="100" y="111" text-anchor="middle" font-family="Arial" font-size="7" fill="#aaa" opacity="0.6">VISION SHORT 2026</text></svg>`,
+};
+
+// ═══════════════════════════════════════
+// PRODUCTS DATA
+// ═══════════════════════════════════════
+const PRODUCTS = [
+  // RAQUETTES PRO 2026
+  {id:1,cat:'Raquettes',brand:'Bullpadel',name:'Vertex 05 2026',svg:'bullpadel_vertex',year:2026,level:'Pro',shape:'Diamant',weight:'365-375g',mat:'Xtend Carbon 12K + MultiEva',price:339.95,old:null,isNew:true,isSale:false,isBest:true,scores:{Puissance:94,Contrôle:80,Maniabilité:72,Confort:78},desc:"La raquette signature de Juan Tello, reconstruite pour la saison 2026. Technologie CurvAktiv optimisée (+11°), Air Power nouvelle génération, noyau Vertex triangulaire. La plus complète de Bullpadel à ce jour."},
+  {id:2,cat:'Raquettes',brand:'Bullpadel',name:'Hack 04 Premier Padel 2026',svg:'bullpadel_hack',year:2026,level:'Pro',shape:'Diamant',weight:'355-365g',mat:'Carbon 12K Alum + MultiEva',price:316.66,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:91,Contrôle:79,Maniabilité:73,Confort:80},desc:"La raquette officielle de Paquito Navarro sur le circuit Premier Padel 2026. Carbon 12K aluminisé pour une frappe explosive. La puissance de Paquito dans vos mains."},
+  {id:3,cat:'Raquettes',brand:'Bullpadel',name:'Neuron 02 2026',svg:'bullpadel_neuron',year:2026,level:'Intermédiaire',shape:'Hybride',weight:'350-360g',mat:'Carbon 3K + MultiEva',price:199.99,old:249.99,isNew:true,isSale:true,isBest:false,scores:{Puissance:83,Contrôle:86,Maniabilité:82,Confort:89},desc:"Créée avec Federico Chingotto. PrismLock, MultiEva tricouche et Carbon 3K pour un équilibre parfait entre stabilité, précision et confort. Idéale pour progresser."},
+  {id:4,cat:'Raquettes',brand:'Bullpadel',name:'Flow 05 2026',svg:'bullpadel_neuron',year:2026,level:'Initiation',shape:'Rond',weight:'340-355g',mat:'Fibre + Soft EVA',price:99.99,old:129.99,isNew:true,isSale:true,isBest:false,scores:{Puissance:65,Contrôle:88,Maniabilité:92,Confort:93},desc:"La raquette parfaite pour débuter le padel avec Bullpadel. Forme ronde, sweet spot généreux, EVA souple. Légère et facile à manier dès la première session."},
+  {id:5,cat:'Raquettes',brand:'Nox',name:'AT10 Luxury Genius 12K 2026',svg:'nox_at10',year:2026,level:'Pro',shape:'Diamant',weight:'360-370g',mat:'Carbon 12K Alum XTREM',price:324.99,old:null,isNew:true,isSale:false,isBest:true,scores:{Puissance:98,Contrôle:68,Maniabilité:64,Confort:71},desc:"La raquette d'Agustín Tapia, numéro 1 mondial. Carbon 12K Alum XTREM pour une puissance absolument dévastatrice. Réservée aux joueurs avancés capables d'exploiter cette brutalité."},
+  {id:6,cat:'Raquettes',brand:'Nox',name:'AT10 Genius Attack 12K 2026',svg:'nox_at10',year:2026,level:'Pro',shape:'Diamant',weight:'358-368g',mat:'Carbon 12K Alum',price:299.99,old:359.95,isNew:true,isSale:true,isBest:false,scores:{Puissance:95,Contrôle:70,Maniabilité:66,Confort:73},desc:"Version Attack de la AT10 Genius 2026. Optimisée pour les joueurs offensifs qui veulent la puissance de Tapia avec une touch légèrement plus accessible."},
+  {id:7,cat:'Raquettes',brand:'Nox',name:'ML10 Pro Cup 2026',svg:'nox_ml10',year:2026,level:'Pro',shape:'Diamant',weight:'355-365g',mat:'Carbon 18K',price:219.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:91,Contrôle:74,Maniabilité:69,Confort:76},desc:"La raquette de Miguel Lamperti. Carbon 18K pour une rigidité maximale et des frappes précises et puissantes. Le choix des joueurs qui veulent dominer depuis le fond."},
+  {id:8,cat:'Raquettes',brand:'Head',name:'Extreme Pro 2026',svg:'head_extreme',year:2026,level:'Pro',shape:'Diamant',weight:'360-370g',mat:'Carbon Fiber HT',price:249.99,old:299.99,isNew:true,isSale:true,isBest:false,scores:{Puissance:92,Contrôle:76,Maniabilité:70,Confort:77},desc:"La nouvelle Extreme Pro 2026 d'Arturo Coello. Cadre carbone haute résistance pour des smashes dévastateurs. Redessinée pour plus de puissance et de précision au filet."},
+  {id:9,cat:'Raquettes',brand:'Head',name:'Speed Motion 2025',svg:'head_speed',year:2025,level:'Intermédiaire',shape:'Hybride',weight:'340-355g',mat:'Carbon Composite',price:179.99,old:219.99,isNew:false,isSale:true,isBest:true,scores:{Puissance:81,Contrôle:89,Maniabilité:87,Confort:91},desc:"⭐ Élue MEILLEURE RAQUETTE HYBRIDE aux Best Padel Awards 2025 par Testea. Polyvalente, confortable, performante. Le choix idéal pour la majorité des joueurs intermédiaires à avancés."},
+  {id:10,cat:'Raquettes',brand:'Head',name:'Evo Speed 2025',svg:'head_speed',year:2025,level:'Initiation',shape:'Rond',weight:'330-345g',mat:'Fibre composite',price:89.99,old:109.99,isNew:false,isSale:true,isBest:false,scores:{Puissance:66,Contrôle:89,Maniabilité:93,Confort:94},desc:"Notée 4.7/5 par plus de 600 acheteurs. La référence des raquettes pour débutants. Confortable, légère et indulgente sur les frappes imprécises. Le meilleur premier achat."},
+  {id:11,cat:'Raquettes',brand:'Adidas',name:'Metalbone 3.4 2025',svg:'adidas_metalbone',year:2025,level:'Pro',shape:'Diamant',weight:'362-372g',mat:'Carbon 16K Alum + EVA Soft',price:233.33,old:299.99,isNew:false,isSale:true,isBest:true,scores:{Puissance:93,Contrôle:72,Maniabilité:68,Confort:74},desc:"⭐ Élue MEILLEURE RAQUETTE PUISSANCE aux Best Padel Awards 2025. Signature Ale Galán. Carbon 16K aluminisé, Weight & Balance System ajustable, Power Groove. L'arme des champions."},
+  {id:12,cat:'Raquettes',brand:'Adidas',name:'Adipower Team 2026',svg:'adidas_metalbone',year:2026,level:'Pro',shape:'Diamant',weight:'360-370g',mat:'Carbon 100%',price:259.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:95,Contrôle:70,Maniabilité:66,Confort:72},desc:"La raquette des joueurs Adidas en circuit professionnel 2026. 100% carbon, structure octogonale et Low Poly Technology pour une rigidité et puissance maximales."},
+  {id:13,cat:'Raquettes',brand:'Babolat',name:'Air Viper 2026',svg:'babolat_air',year:2026,level:'Intermédiaire',shape:'Hybride',weight:'350-362g',mat:'Carbon 16K + Vibrasorb',price:219.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:78,Contrôle:87,Maniabilité:88,Confort:92},desc:"Légèreté et maniabilité explosive pour 2026. Le système Vibrasorb SMAC protège vos articulations. Plan de perçage HPS optimisé pour plus de puissance et précision."},
+  {id:14,cat:'Raquettes',brand:'Babolat',name:'Technical Viper Juan Lebrón 2025',svg:'babolat_technical',year:2025,level:'Pro',shape:'Diamant',weight:'355-368g',mat:'Carbon 18K',price:209.99,old:269.99,isNew:false,isSale:true,isBest:false,scores:{Puissance:94,Contrôle:70,Maniabilité:67,Confort:73},desc:"La raquette de Juan Lebrón, l'un des joueurs les plus puissants du circuit. Carbon 18K rigidité maximale, X-EVA tricouche et système de frappe explosif."},
+  {id:15,cat:'Raquettes',brand:'Wilson',name:'Bela Pro V2 2025',svg:'wilson_bela',year:2025,level:'Pro',shape:'Diamant',weight:'368-378g',mat:'Carbon 18K',price:199.99,old:269.99,isNew:false,isSale:true,isBest:false,scores:{Puissance:96,Contrôle:70,Maniabilité:64,Confort:71},desc:"La raquette légendaire de Fernando Belasteguin. Carbon 18K pour une puissance de frappe absolue. L'instrument du plus grand palmarès de l'histoire du padel."},
+  {id:16,cat:'Raquettes',brand:'Siux',name:'Diablo Pro 2026',svg:'siux_diablo',year:2026,level:'Pro',shape:'Diamant',weight:'360-370g',mat:'Graphene + Carbon',price:199.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:92,Contrôle:73,Maniabilité:69,Confort:75},desc:"Conçue pour T. Libaak. La Diablo Pro 2026 combine graphene et carbone pour une puissance explosive et un contrôle précis. Design diabolique, performances infernales."},
+  {id:17,cat:'Raquettes',brand:'StarVie',name:'Titania Pro 2026',svg:'starvie_titania',year:2026,level:'Pro',shape:'Diamant',weight:'358-368g',mat:'Carbon 24K',price:229.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:93,Contrôle:71,Maniabilité:68,Confort:74},desc:"La fierté espagnole de StarVie pour 2026. Carbon 24K haute performance pour les compétiteurs sérieux. Puissance, précision et durabilité au plus haut niveau."},
+  {id:18,cat:'Raquettes',brand:'Tecnifibre',name:'Wall Breaker 365 2026',svg:'head_extreme',year:2026,level:'Pro',shape:'Diamant',weight:'365g',mat:'Carbon 100%',price:249.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Puissance:93,Contrôle:72,Maniabilité:68,Confort:74},desc:"La Wall Breaker 365 2026 de Tecnifibre. 100% carbone pour casser les murs. La raquette des joueurs qui aiment dominer par la puissance et la précision."},
+  {id:19,cat:'Raquettes',brand:'Dunlop',name:'Galaxy Carbon Pro 2025',svg:'wilson_bela',year:2025,level:'Intermédiaire',shape:'Diamant',weight:'348-360g',mat:'Carbon 12K',price:149.99,old:199.99,isNew:false,isSale:true,isBest:false,scores:{Puissance:85,Contrôle:78,Maniabilité:74,Confort:80},desc:"Puissance et précision carbone à prix accessible. La Galaxy Carbon Pro 2025 offre une excellente entrée dans l'univers carbone pour les joueurs intermédiaires ambitieux."},
+  // CHAUSSURES
+  {id:20,cat:'Chaussures',brand:'Asics',name:'Gel-Padel Pro 5 2026',svg:'asics_shoe',year:2026,level:null,shape:null,weight:'380g',mat:'Mesh + GEL Technology',price:129.99,old:159.99,isNew:true,isSale:true,isBest:true,scores:{Amorti:92,Adhérence:88,Légèreté:81,Stabilité:90},desc:"La référence des chaussures padel 2026. Technologie GEL amortissante Asics, semelle omni-directionnelle pour gazon synthétique, tige mesh ultra-respirante. Confort sur toute la durée du match."},
+  {id:21,cat:'Chaussures',brand:'Munich',name:'Padx 11 2026',svg:'munich_shoe',year:2026,level:null,shape:null,weight:'340g',mat:'Cuir synthétique premium',price:109.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Amorti:85,Adhérence:93,Légèreté:85,Stabilité:89},desc:"L'incontournable espagnole pour le gazon synthétique. La Munich Padx 11 2026 offre une adhérence maximale, un maintien du pied parfait et un look premium inimitable."},
+  {id:22,cat:'Chaussures',brand:'Adidas',name:'Adizero Ubersonic 4 Padel',svg:'adidas_shoe',year:2025,level:null,shape:null,weight:'310g',mat:'Primeknit + Boost',price:89.99,old:129.99,isNew:false,isSale:true,isBest:false,scores:{Amorti:81,Adhérence:87,Légèreté:95,Stabilité:83},desc:"Ultra légère et ultra réactive. L'Ubersonic 4 Padel offre une sensation de liberté et de vitesse incomparable pour les joueurs rapides qui aiment se déplacer vite."},
+  {id:23,cat:'Chaussures',brand:'Head',name:'Sprint Pro 4.0 Padel 2025',svg:'asics_shoe',year:2025,level:null,shape:null,weight:'358g',mat:'Mesh + EVA',price:99.99,old:null,isNew:false,isSale:false,isBest:false,scores:{Amorti:88,Adhérence:86,Légèreté:83,Stabilité:87},desc:"Conçue pour les joueurs polyvalents. Mesh ultra-respirant Head, amorti EVA multicouche et semelle padel spécifique gazon synthétique. Polyvalence et durabilité."},
+  // BALLES
+  {id:24,cat:'Balles',brand:'Head',name:'Padel Pro S+ x3 — Tube',svg:'head_ball',year:2026,level:null,shape:null,weight:null,mat:'Caoutchouc naturel + feutre',price:7.99,old:9.99,isNew:true,isSale:true,isBest:true,scores:{Vitesse:88,Durabilité:86,Rebond:91,Contrôle:87},desc:"La balle officielle du World Padel Tour. Homologuée compétition professionnelle. Caoutchouc naturel haute qualité et feutre premium pour un jeu constant et prévisible. Tube de 3 balles."},
+  {id:25,cat:'Balles',brand:'Nox',name:'Pro Titanium x3 — Tube',svg:'nox_ball',year:2025,level:null,shape:null,weight:null,mat:'Titanium Rubber + feutre',price:8.49,old:null,isNew:false,isSale:false,isBest:false,scores:{Vitesse:92,Durabilité:82,Rebond:93,Contrôle:80},desc:"La balle la plus rapide du marché. Technologie Titanium Rubber pour des échanges dynamiques et un rebond explosif. Pour les joueurs qui aiment jouer vite."},
+  {id:26,cat:'Balles',brand:'Head',name:'Padel Pro S+ x3 — Pack 3 tubes',svg:'head_ball',year:2026,level:null,shape:null,weight:null,mat:'Caoutchouc naturel + feutre',price:15.90,old:24.00,isNew:false,isSale:true,isBest:false,scores:{Vitesse:88,Durabilité:86,Rebond:91,Contrôle:87},desc:"Pack économique : 3 tubes de balles Head Pro S+ pour s'entraîner toute la semaine. Économisez 34% par rapport à l'achat tube par tube."},
+  {id:27,cat:'Balles',brand:'Wilson',name:'Premier Padel x3',svg:'nox_ball',year:2026,level:null,shape:null,weight:null,mat:'Feutre compétition',price:7.49,old:null,isNew:true,isSale:false,isBest:false,scores:{Vitesse:85,Durabilité:88,Rebond:87,Contrôle:89},desc:"Balle Wilson 2026 pour tous niveaux. Comportement prévisible, excellente durabilité et feutre premium pour travailler ses coups en toute confiance."},
+  {id:28,cat:'Balles',brand:'Babolat',name:'Gold Padel x3',svg:'head_ball',year:2025,level:null,shape:null,weight:null,mat:'Feutre premium gold',price:6.99,old:8.99,isNew:false,isSale:true,isBest:false,scores:{Vitesse:83,Durabilité:89,Rebond:85,Contrôle:90},desc:"Balle premium Babolat Gold pour un jeu précis et durable. Feutre haute qualité résistant aux conditions climatiques. Idéale pour l'entraînement régulier."},
+  // ACCESSOIRES
+  {id:29,cat:'Accessoires',brand:'Bullpadel',name:'Sac de Padel Alpha 2026',svg:'bullpadel_bag',year:2026,level:null,shape:null,weight:null,mat:'Polyester 600D renforcé',price:79.99,old:null,isNew:true,isSale:false,isBest:true,scores:{Capacité:94,Solidité:92,Confort:90,Style:90},desc:"Le sac de padel premium Bullpadel 2026. Contient 3 raquettes, compartiment chaussures isotherme, poche latérale pour balles et bretelles ergonomiques rembourrées. Le compagnon idéal."},
+  {id:30,cat:'Accessoires',brand:'Head',name:'Padel Alpha Bag 2026',svg:'head_bag',year:2026,level:null,shape:null,weight:null,mat:'Nylon premium 900D',price:89.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Capacité:96,Solidité:93,Confort:91,Style:88},desc:"Le sac de padel haut de gamme Head 2026. 3 raquettes, poche isotherme 10L, compartiment laptop 15 pouces, poche chaussures. Le plus complet du marché."},
+  {id:31,cat:'Accessoires',brand:'Bullpadel',name:'Sac BPP-24007 2024',svg:'bullpadel_bag',year:2024,level:null,shape:null,weight:null,mat:'Polyester 600D',price:54.99,old:79.99,isNew:false,isSale:true,isBest:false,scores:{Capacité:90,Solidité:88,Confort:86,Style:82},desc:"Sac de padel Bullpadel grande capacité. Compartiment raquette rembourré (2 raquettes), poche chaussures séparée et bretelles réglables confortables."},
+  {id:32,cat:'Accessoires',brand:'Adidas',name:'Protège-cadre Universel',svg:'grip',year:2025,level:null,shape:null,weight:null,mat:'Polyuréthane 3mm',price:14.99,old:19.99,isNew:false,isSale:true,isBest:false,scores:{Protection:92,Adhérence:87,Durabilité:90,Discrétion:94},desc:"Protection maximale pour votre raquette. Polyuréthane 3mm absorbe les chocs contre les murs et le sol. Compatible avec toutes les raquettes. Transparent discret."},
+  {id:33,cat:'Accessoires',brand:'Bullpadel',name:'Surgrip Comfort Blanc x4',svg:'grip',year:2026,level:null,shape:null,weight:null,mat:'PU + mousse absorbante',price:8.00,old:10.00,isNew:false,isSale:true,isBest:false,scores:{Grip:90,Absorption:88,Durabilité:82,Confort:92},desc:"Le surgrip officiel de Bullpadel. PU premium anti-transpiration avec mousse absorbante. Prise en main optimale pour toutes conditions climatiques. Pack de 4."},
+  {id:34,cat:'Accessoires',brand:'4ON',name:'Spray Total Grip',svg:'grip',year:2025,level:null,shape:null,weight:null,mat:'Formule anti-transpiration',price:22.90,old:27.00,isNew:false,isSale:true,isBest:false,scores:{Efficacité:94,Durée:88,Odeur:85,Facilité:96},desc:"Le spray anti-transpiration pour une prise en main parfaite. Formule professionnelle utilisée sur le circuit. Bouteille 100ml pour 200+ applications."},
+  // VÊTEMENTS
+  {id:35,cat:'Vêtements',brand:'Nox',name:'T-Shirt Tech Pro 2026 — Homme',svg:'tshirt',year:2026,level:null,shape:null,weight:null,mat:'Dri-Fit 100% polyester',price:34.99,old:44.99,isNew:true,isSale:true,isBest:false,scores:{Respirabilité:93,Légèreté:91,Confort:89,Style:87},desc:"T-shirt technique Nox 2026 ultra-respirant. Tissu Dri-Fit 100% polyester avec protection UV 50+. Coupe ajustée pour liberté totale de mouvement sur le court."},
+  {id:36,cat:'Vêtements',brand:'Head',name:'Short Vision 2026 — Homme',svg:'short',year:2026,level:null,shape:null,weight:null,mat:'Recycled Polyester 87%',price:44.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Respirabilité:89,Légèreté:93,Confort:91,Style:91},desc:"Short de padel Head 2026 en polyester recyclé éco-responsable. Ceinture élastique réglable, poches zippées, coupe ergonomique pour mouvements amples sur le court."},
+  {id:37,cat:'Vêtements',brand:'Bullpadel',name:'Polo Vertex 2026 — Homme',svg:'tshirt',year:2026,level:null,shape:null,weight:null,mat:'Polyester technique',price:39.99,old:null,isNew:true,isSale:false,isBest:false,scores:{Respirabilité:88,Légèreté:88,Confort:90,Style:94},desc:"Polo technique Bullpadel 2026. Tissu stretch 4 voies pour liberté de mouvement totale. Design élégant qui passe du court au quotidien. Technologie anti-transpirant."},
+];
+
+// ═══════════════════════════════════════
+// STATE & LOGIC
+// ═══════════════════════════════════════
+let currentCat='Tous', currentFilter='Tous', currentSort='default', searchQuery='', cart=[], lastPage='home', detailQty=1;
+
+function getFiltered(cat){
+  let d=PRODUCTS.filter(p=>{
+    if(cat&&cat!=='Tous'&&p.cat!==cat) return false;
+    if(currentFilter==='Pro'&&p.level!=='Pro') return false;
+    if(currentFilter==='Intermédiaire'&&p.level!=='Intermédiaire') return false;
+    if(currentFilter==='Initiation'&&p.level!=='Initiation') return false;
+    if(currentFilter==='2026'&&p.year!==2026) return false;
+    if(currentFilter==='2025'&&p.year!==2025) return false;
+    if(currentFilter==='Promo'&&!p.isSale) return false;
+    if(searchQuery&&!p.name.toLowerCase().includes(searchQuery.toLowerCase())&&!p.brand.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+    return true;
+  });
+  if(currentSort==='price-asc') d.sort((a,b)=>a.price-b.price);
+  else if(currentSort==='price-desc') d.sort((a,b)=>b.price-a.price);
+  else if(currentSort==='promo') d.sort((a,b)=>(b.isSale?1:0)-(a.isSale?1:0));
+  return d;
+}
+
+function renderCard(p,i){
+  const lvlClass=p.level==='Pro'?'pro':p.level==='Intermédiaire'?'inter':p.level==='Initiation'?'init':'';
+  return `<div class="prod-card anim-in" style="animation-delay:${Math.min(i*0.05,0.5)}s" onclick="openDetail(${p.id})">
+    <div class="prod-badge">
+      ${p.isNew?'<span class="badge badge-new">NOUVEAU</span>':''}
+      ${p.isSale?'<span class="badge badge-sale">PROMO</span>':''}
+      ${p.isBest?'<span class="badge badge-best">TOP VENTE</span>':''}
+    </div>
+    <div class="prod-img">${SVG[p.svg]||''}<div class="prod-fav" onclick="event.stopPropagation();this.classList.toggle('active');this.textContent=this.classList.contains('active')?'♥':'♡'">♡</div></div>
+    <div class="prod-body">
+      <div class="prod-brand">${p.brand} · ${p.year}</div>
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-tags">
+        ${p.level?`<span class="prod-tag ${lvlClass}">${p.level}</span>`:''}
+        ${p.shape?`<span class="prod-tag">${p.shape}</span>`:''}
+        ${p.weight?`<span class="prod-tag">${p.weight}</span>`:''}
+      </div>
+      <div class="prod-bottom">
+        <div class="prod-price">
+          ${p.old?`<div class="prod-price-old">${p.old.toFixed(2)}€</div>`:''}
+          <div class="prod-price-new ${p.isSale?'sale':''}">${p.price.toFixed(2)}€</div>
+        </div>
+        <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})">+ Panier</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderGrid(gridId,products){
+  const el=document.getElementById(gridId);
+  if(!el) return;
+  el.innerHTML=products.map((p,i)=>renderCard(p,i)).join('');
+}
+
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(name+'Page').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showCat(cat,navEl){
+  currentCat=cat; lastPage='catalog';
+  currentFilter='Tous'; currentSort='default';
+  if(navEl){document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));navEl.classList.add('active');}
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  const first=document.querySelector('#filtersBar .filter-btn');
+  if(first) first.classList.add('active');
+  const titles={Tous:'Tous les Produits',Raquettes:'Raquettes Padel',Chaussures:'Chaussures Padel',Balles:'Balles de Padel',Accessoires:'Accessoires Padel',Vêtements:'Vêtements Padel'};
+  document.getElementById('catTitle').innerHTML=`${titles[cat]||cat}`;
+  const filtered=getFiltered(cat);
+  document.getElementById('catCountEl').textContent=filtered.length+' produit'+(filtered.length>1?'s':'');
+  const empty=document.getElementById('emptyState');
+  if(filtered.length===0){document.getElementById('catalogGrid').innerHTML='';empty.style.display='block';}
+  else{empty.style.display='none';renderGrid('catalogGrid',filtered);}
+  showPage('catalog');
+}
+
+function openDetail(id){
+  const p=PRODUCTS.find(x=>x.id===id); if(!p) return;
+  detailQty=1;
+  const save=p.old?Math.round((1-p.price/p.old)*100):0;
+  const lvlClass=p.level==='Pro'?'pro':p.level==='Intermédiaire'?'inter':p.level==='Initiation'?'init':'';
+  document.getElementById('detailContent').innerHTML=`
+    <div>
+      <div class="detail-img-wrap">${SVG[p.svg]||''}</div>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
+        ${p.isBest?'<span class="badge badge-best" style="font-size:11px;padding:5px 12px;">⭐ TOP VENTE</span>':''}
+        ${p.isNew?'<span class="badge badge-new" style="font-size:11px;padding:5px 12px;">NOUVEAU 2026</span>':''}
+        ${p.isSale?'<span class="badge badge-sale" style="font-size:11px;padding:5px 12px;">🔥 PROMO</span>':''}
+      </div>
+    </div>
+    <div>
+      <div class="detail-brand">${p.brand} · Collection ${p.year}</div>
+      <div class="detail-name">${p.name}</div>
+      <div class="detail-price-wrap">
+        <div class="detail-price">${p.price.toFixed(2)}€</div>
+        ${p.old?`<div class="detail-price-old">${p.old.toFixed(2)}€</div><div class="detail-save">-${save}%</div>`:''}
+      </div>
+      <div class="detail-desc">${p.desc}</div>
+      <div class="specs-list">
+        ${p.level?`<div class="spec-row"><span>Niveau</span><span><span class="prod-tag ${lvlClass}" style="font-size:12px">${p.level}</span></span></div>`:''}
+        ${p.shape?`<div class="spec-row"><span>Forme</span><span>${p.shape}</span></div>`:''}
+        ${p.weight?`<div class="spec-row"><span>Poids</span><span>${p.weight}</span></div>`:''}
+        <div class="spec-row"><span>Matériau</span><span>${p.mat}</span></div>
+        <div class="spec-row"><span>Catégorie</span><span>${p.cat}</span></div>
+        <div class="spec-row"><span>Année</span><span>${p.year}</span></div>
+        <div class="spec-row"><span>Disponibilité</span><span style="color:var(--green)">✅ En stock</span></div>
+      </div>
+      <div class="score-list">
+        ${Object.entries(p.scores).map(([k,v])=>`
+          <div class="score-item">
+            <div class="score-lbl">${k}</div>
+            <div class="score-track"><div class="score-fill" style="width:0%" data-w="${v}%"></div></div>
+            <div class="score-val">${v}</div>
+          </div>`).join('')}
+      </div>
+      <div class="qty-wrap">
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <div class="qty-num" id="qtyNum">1</div>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+        <span style="font-size:12px;color:var(--muted)">Livraison 24h ✅</span>
+      </div>
+      <button class="detail-add" onclick="addToCart(${p.id})">Ajouter au panier — ${p.price.toFixed(2)}€</button>
+      <button class="detail-wish">♡ Ajouter à ma liste de souhaits</button>
+      <div class="trust-badges">
+        <div class="trust-badge">🚚 Livraison 24h</div>
+        <div class="trust-badge">↩️ Retour 30j gratuit</div>
+        <div class="trust-badge">🔒 Paiement sécurisé</div>
+        <div class="trust-badge">✅ Produit 100% officiel</div>
+      </div>
+    </div>`;
+  showPage('detail');
+  setTimeout(()=>document.querySelectorAll('.score-fill').forEach(el=>el.style.width=el.dataset.w),120);
+}
+
+function goBack(){showPage(lastPage==='catalog'?'catalog':'home');}
+function changeQty(d){detailQty=Math.max(1,detailQty+d);const el=document.getElementById('qtyNum');if(el)el.textContent=detailQty;}
+function addToCart(id){const p=PRODUCTS.find(x=>x.id===id);if(!p)return;const ex=cart.find(c=>c.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1});updateCart();toggleCart();}
+function removeFromCart(id){cart=cart.filter(c=>c.id!==id);updateCart();}
+function updateCart(){
+  const count=cart.reduce((s,c)=>s+c.qty,0);
+  const total=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  document.getElementById('cartCount').textContent=count;
+  document.getElementById('cartTotal').textContent=total.toFixed(2)+'€';
+  const el=document.getElementById('cartItems');
+  if(!cart.length){el.innerHTML='<div class="cart-empty"><div style="font-size:44px;margin-bottom:10px">🎾</div><p>Votre panier est vide</p></div>';return;}
+  el.innerHTML=cart.map(c=>`<div class="cart-item">
+    <div class="cart-item-img">${SVG[c.svg]||''}</div>
+    <div class="cart-item-info"><div class="cart-item-brand">${c.brand}</div><div class="cart-item-name">${c.name}</div><div class="cart-item-price">${(c.price*c.qty).toFixed(2)}€ ${c.qty>1?`<span style="font-size:11px;color:var(--muted)">×${c.qty}</span>`:''}</div></div>
+    <div class="cart-item-remove" onclick="removeFromCart(${c.id})">✕</div>
+  </div>`).join('');
+}
+function toggleCart(){document.getElementById('cartOverlay').classList.toggle('on');}
+function closeCart(e){if(e.target.id==='cartOverlay')toggleCart();}
+function setFilter(f,el){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');const filtered=getFiltered(currentCat);document.getElementById('catCountEl').textContent=filtered.length+' produit'+(filtered.length>1?'s':'');const empty=document.getElementById('emptyState');if(filtered.length===0){document.getElementById('catalogGrid').innerHTML='';empty.style.display='block';}else{empty.style.display='none';renderGrid('catalogGrid',filtered);}}
+function setSort(v){currentSort=v;renderGrid('catalogGrid',getFiltered(currentCat));}
+function doSearch(){searchQuery=document.getElementById('searchInput').value;if(searchQuery){showCat('Tous',null);}}
+
+// Init
+renderGrid('homeGrid',PRODUCTS.filter(p=>p.isBest||p.isNew).slice(0,8));
+</script>
+</body>
+</html>
+
