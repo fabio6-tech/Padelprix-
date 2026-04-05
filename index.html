@@ -178,6 +178,23 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
 @media(max-width:900px){.dgrid,.pin,.ftop{grid-template-columns:1fr;}nav{display:none;}.srch{width:110px;}.cp{width:100%;}.cats{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:580px){.cats{grid-template-columns:repeat(2,1fr);}.ftop{grid-template-columns:1fr;}.nf{flex-direction:column;}.hstats{gap:20px;}.diw{height:240px;}}
 @keyframes fu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── GALERIE MULTI-PHOTOS ── */
+.gal-main{width:100%;aspect-ratio:1;border-radius:14px;background:var(--lc);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.gal-main img{width:100%;height:100%;object-fit:contain;padding:20px;transition:opacity .25s;}
+.gal-main img.fade{opacity:0;}
+.gal-thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.gal-thumb{width:64px;height:64px;border-radius:8px;background:var(--lc);cursor:pointer;overflow:hidden;border:2px solid transparent;transition:border-color .2s,transform .2s;flex-shrink:0;}
+.gal-thumb:hover{transform:scale(1.05);}
+.gal-thumb.active{border-color:var(--a);}
+.gal-thumb img{width:100%;height:100%;object-fit:contain;padding:4px;}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 8px;pointer-events:none;}
+.gal-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;pointer-events:all;transition:background .2s;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.gal-btn:hover{background:#fff;}
+.gal-dot-row{display:flex;justify-content:center;gap:5px;margin-top:8px;}
+.gal-dot{width:7px;height:7px;border-radius:50%;background:var(--bc);cursor:pointer;transition:background .2s,transform .2s;}
+.gal-dot.active{background:var(--a);transform:scale(1.3);}
+
 </style>
 </head>
 <body>
@@ -419,9 +436,31 @@ function od(id){
   dQ=1;lp='cat';
   const sv=p.old?Math.round((1-p.price/p.old)*100):0;
   const lc=p.lv==='Pro'?'pro':p.lv==='Intermédiaire'?'int':p.lv==='Initiation'?'ini':'';
+  
+  // Construire la galerie
+  galPhotos = buildGallery(p);
+  galIdx = 0;
+  
+  const thumbsHtml = galPhotos.map((url,i) => `
+    <div class="gal-thumb${i===0?' active':''}" onclick="galShow(${i})">
+      <img src="${url}" alt="vue ${i+1}" onerror="this.parentElement.style.display='none'">
+    </div>`).join('');
+  
+  const dotsHtml = galPhotos.map((_,i) => `
+    <div class="gal-dot${i===0?' active':''}" onclick="galShow(${i})"></div>`).join('');
+  
   document.getElementById('dc').innerHTML=`
     <div>
-      <div class="diw"><img src="${imgUrl(p.img)}" alt="${p.brand} ${p.name}" onerror="iE(this)" style="width:100%;height:100%;object-fit:contain;padding:22px;"></div>
+      <div class="gal-main">
+        <img id="galMain" src="${galPhotos[0]}" alt="${p.brand} ${p.name}" onerror="this.src='${imgUrl(p.img)}'">
+        ${galPhotos.length>1?`
+        <div class="gal-nav">
+          <button class="gal-btn" onclick="galNav(-1)">&#8249;</button>
+          <button class="gal-btn" onclick="galNav(1)">&#8250;</button>
+        </div>`:''}
+      </div>
+      ${galPhotos.length>1?`<div class="gal-dot-row">${dotsHtml}</div>`:''}
+      ${galPhotos.length>1?`<div class="gal-thumbs">${thumbsHtml}</div>`:''}
       <div style="display:flex;gap:7px;margin-top:10px;flex-wrap:wrap;">
         ${p.Best?'<span class="bdg bb" style="font-size:10px;padding:4px 10px;">⭐ TOP</span>':''}
         ${p.New?'<span class="bdg bn" style="font-size:10px;padding:4px 10px;">NOUVEAU</span>':''}
@@ -466,6 +505,120 @@ function cC(e){if(e.target.id==='ov')tC();}
 function sf(f,el){cF=f;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));el.classList.add('on');render();}
 function ss(v){cS=v;render();}
 function ds(){q=document.getElementById('si').value;if(q)nv('Tous',null);}
+
+
+// ── SYSTÈME GALERIE MULTI-PHOTOS ──
+// Pour extreme-padel.fr : les vues sont aux IDs id-1, id-2, id+1, id+2...
+// Pour zonadepadel.com : même principe avec home_default
+// Pour les autres : photo unique
+
+function getEpId(url) {
+  const m = url && url.match(/\/product\/([0-9]+)-large_default/);
+  return m ? parseInt(m[1]) : null;
+}
+
+function getZdpData(url) {
+  const m = url && url.match(/\/([0-9]+)-home_default\/(.+)$/);
+  return m ? {id: parseInt(m[1]), name: m[2]} : null;
+}
+
+// Table des galleries connues pour EP (ID principal → IDs des vues)
+const EP_GALLERY = {
+  // Coello 2026
+  59137: [59137,59136,59138,59139,59140,59141,59135,59134], // Coello Pro 2026
+  59121: [59121,59119,59120,59122,59123,59124,59118,59117], // Coello Motion 2026
+  59435: [59435,59436,59437,59438,59434,59433],              // Coello Team 2026
+  59100: [59100,59101,59102,59103,59099,59098],              // Coello Vibe 2026
+  59447: [59447,59448,59449,59446,59445],                    // Coello Junior 2026
+  // Extreme 2025
+  51018: [51018,51017,51016,51015,51014,51019,51020],        // Extreme Pro 2025
+  51025: [51025,51024,51023,51022,51021,51026,51027],        // Extreme Motion 2025
+  // Coello 2025
+  42062: [42062,42061,42068,42069,42064,42065,42063],        // Coello Pro 2025
+  42079: [42079,42078,42077,42080,42081,42082],              // Coello Motion 2025
+  42092: [42092,42091,42093,42094,42090],                    // Coello Vibe 2025
+  // Speed 2025
+  38014: [38014,38012,38017,38018,38013,38015,38016],        // Speed Pro 2025
+  38003: [38003,38001,38002,38004,38005,38006],              // Speed Motion 2025
+  40942: [40942,40941,40943,40944,40940],                    // Evo Speed 2025
+};
+
+// Table ZDP (ID principal → IDs des vues)
+const ZDP_GALLERY = {
+  // Extreme 2026
+  27753: [27753,27754,27755,27756,27757],  // Extreme Pro 2026
+  27756: [27756,27754,27755,27757,27758],  // Extreme Motion 2026
+  27758: [27758,27757,27759,27760,27753],  // Extreme Team 2026
+  27760: [27760,27759,27758,27757,27756],  // Evo Extreme 2026
+  // Radical 2026
+  29333: [29333,29334,29335,29336,29337],
+  // Coello 2025
+  23033: [23033,23034,23035,23036,23037],  // Coello Pro 2025
+  23503: [23503,23504,23505,23506,23507],  // Coello Vibe 2025
+  // Speed 2025
+  21738: [21738,21739,21740,21741,21742],  // Speed One X
+  21749: [21749,21750,21751,21752,21753],  // Speed Team
+  // Gravity 2025
+  20309: [20309,20310,20311,20312,20313],  // Gravity Pro
+  20311: [20311,20312,20310,20309,20313],  // Gravity Motion
+  20313: [20313,20312,20309,20310,20311],  // Gravity Team
+};
+
+const EP_BASE = 'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/';
+const ZDP_BASE = 'https://www.zonadepadel.com/';
+
+function buildGallery(p) {
+  const mainUrl = imgUrl(p.img);
+  
+  // Détection source EP
+  const epId = getEpId(mainUrl);
+  if (epId) {
+    const ids = EP_GALLERY[epId] || [epId, epId-1, epId-2, epId+1, epId+2];
+    // Vue principale en large, autres en medium
+    return ids.map((id,i) => 
+      EP_BASE + id + (i===0 ? '-large_default.webp' : '-medium_default.webp')
+    );
+  }
+  
+  // Détection source ZDP
+  const zdpData = getZdpData(mainUrl);
+  if (zdpData) {
+    const ids = ZDP_GALLERY[zdpData.id] || 
+      [zdpData.id, zdpData.id+1, zdpData.id+2, zdpData.id-1, zdpData.id+3];
+    return ids.map(id => ZDP_BASE + id + '-home_default/' + zdpData.name);
+  }
+  
+  // Source inconnue : photo unique
+  return [mainUrl];
+}
+
+// Index photo courant
+let galIdx = 0;
+let galPhotos = [];
+
+function galShow(idx) {
+  galIdx = idx;
+  const imgs = document.querySelectorAll('.gal-thumb');
+  imgs.forEach((t,i) => t.classList.toggle('active', i===idx));
+  const dots = document.querySelectorAll('.gal-dot');
+  dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+  const main = document.getElementById('galMain');
+  if (!main) return;
+  main.classList.add('fade');
+  setTimeout(() => {
+    main.src = galPhotos[idx];
+    main.onerror = () => {
+      // Si l'image n'existe pas, on revient à la principale
+      main.src = galPhotos[0];
+    };
+    main.classList.remove('fade');
+  }, 200);
+}
+
+function galNav(dir) {
+  const next = (galIdx + dir + galPhotos.length) % galPhotos.length;
+  galShow(next);
+}
 
 initBB();
 rG('hg',P.filter(p=>p.Best&&p.cat==='Raquettes').slice(0,8));
