@@ -46,7 +46,7 @@ nav{display:flex;gap:2px;flex:1;overflow-x:auto;}
 .ssub{font-size:13px;color:var(--m);margin-top:4px;}
 .sall{font-family:'DM Mono',monospace;font-size:11px;color:var(--m);border:1.5px solid var(--bd);border-radius:20px;padding:6px 14px;cursor:pointer;white-space:nowrap;background:none;}
 .sall:hover{border-color:var(--k);color:var(--k);}
-.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
 .cat{background:var(--w);border:2px solid var(--bd);border-radius:12px;padding:18px 10px;cursor:pointer;text-align:center;transition:all .2s;}
 .cat:hover{border-color:var(--k);transform:translateY(-3px);}
 .cat.dk{background:var(--k);border-color:var(--k);}
@@ -59,7 +59,7 @@ nav{display:flex;gap:2px;flex:1;overflow-x:auto;}
 .fb,.fbrand{background:var(--w);border:2px solid var(--bd);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;}
 .fb:hover,.fb.on,.fbrand:hover,.fbrand.on{background:var(--k);color:var(--w);border-color:var(--k);}
 .fsort{margin-left:auto;background:var(--w);border:2px solid var(--bd);border-radius:20px;padding:5px 12px;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;outline:none;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
 .pc{background:var(--w);border:2px solid var(--bd);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .22s;position:relative;}
 .pc:hover{border-color:var(--k);transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
 .pbdg{position:absolute;top:7px;left:7px;z-index:2;display:flex;flex-direction:column;gap:3px;}
@@ -67,21 +67,21 @@ nav{display:flex;gap:2px;flex:1;overflow-x:auto;}
 .bn{background:var(--k);color:var(--y);}
 .bs{background:var(--r);color:#fff;}
 .bb{background:var(--g);color:#fff;}
-.pimg{aspect-ratio:1/1;height:auto;background:#ffffff;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
-.pimg img{width:100%;height:100%;object-fit:contain;padding:4px;transition:transform .3s;}
+.pimg{height:170px;background:#ffffff;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.pimg img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .3s;}
 .pc:hover .pimg img{transform:scale(1.05);}
 .pfav{position:absolute;top:7px;right:7px;width:28px;height:28px;background:var(--w);border:1.5px solid var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;transition:all .2s;z-index:3;}
 .pfav:hover,.pfav.on{border-color:var(--r);background:var(--r);color:#fff;}
-.pbdy{padding:14px;}
+.pbdy{padding:11px;}
 .pbr{font-family:'DM Mono',monospace;font-size:12px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
 .pnm{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.5px;line-height:1.2;margin-bottom:8px;}
 .ptgs{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:8px;}
-.ptg{background:var(--s);border-radius:4px;padding:3px 8px;font-size:11px;color:var(--m);font-weight:500;}
+.ptg{background:var(--s);border-radius:4px;padding:2px 6px;font-size:9px;color:var(--m);}
 .ptg.pro{background:rgba(255,51,51,.1);color:var(--r);}
 .ptg.int{background:rgba(255,140,0,.1);color:var(--o);}
 .ptg.ini{background:rgba(0,201,110,.1);color:var(--g);}
 .pbot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1.5px solid var(--bd);}
-.pold{font-size:13px;color:var(--m);text-decoration:line-through;margin-bottom:2px;}
+.pold{font-size:10px;color:var(--m);text-decoration:line-through;margin-bottom:1px;}
 .ppr{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.5px;}
 .ppr.s{color:var(--r);}
 .padd{background:var(--k);color:var(--w);border:none;border-radius:6px;padding:7px 10px;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
@@ -480,30 +480,29 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
   .noscat-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-/* FOOTER PADELPRIX */
+
 footer{background:#111;color:#fff;padding:0;margin:0}
 .ft-main{max-width:1280px;margin:0 auto;padding:3.5rem 2.5rem 2rem;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.6fr;gap:3rem}
-.ft-brand .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:#fff;margin-bottom:1rem}
+.ft-brand .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;margin-bottom:1rem}
 .ft-brand .ft-logo b{color:var(--y)}
 .ft-brand .ft-contact{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.9}
-.ft-col h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:1.2rem;text-transform:uppercase}
+.ft-col h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;margin-bottom:1.2rem;text-transform:uppercase}
 .ft-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
-.ft-col ul li a,.ft-col ul li span{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;cursor:pointer;transition:color .15s}
+.ft-col ul li a,.ft-col ul li span{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;cursor:pointer}
 .ft-col ul li a:hover,.ft-col ul li span:hover{color:var(--y)}
-.ft-news h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:.6rem;text-transform:uppercase}
+.ft-news h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;margin-bottom:.6rem;text-transform:uppercase}
 .ft-news p{font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem}
 .ft-news-form{display:flex;flex-direction:column;gap:.6rem}
 .ft-news-input{background:#1e1e1e;border:1px solid #333;color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;padding:.7rem 1rem;border-radius:6px;outline:none}
-.ft-news-input::placeholder{color:#555}
 .ft-news-btn{background:var(--y);color:var(--k);border:none;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;padding:.7rem 1rem;border-radius:6px;cursor:pointer}
 .ft-bottom{border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .ft-social{display:flex;gap:.7rem}
 .ft-social a{width:38px;height:38px;border-radius:50%;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,.5)}
 .ft-payments{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
-.ft-pay{background:#1e1e1e;border:1px solid #2a2a2a;border-radius:5px;padding:.3rem .55rem;font-family:'DM Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.06em}
+.ft-pay{background:#1e1e1e;border:1px solid #2a2a2a;border-radius:5px;padding:.3rem .55rem;font-family:'DM Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.5)}
 .ft-copy{font-family:'DM Sans',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:.9rem 2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .ft-copy a{color:rgba(255,255,255,.3);text-decoration:none}
-@media(max-width:900px){.ft-main{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:900px){.ft-main{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.ft-main{grid-template-columns:1fr}}
 </style>
 </head>
@@ -547,8 +546,47 @@ footer{background:#111;color:#fff;padding:0;margin:0}
     <span class="bi">BULLPADEL</span><span class="bi">ADIDAS</span><span class="bi">HEAD</span><span class="bi">NOX</span><span class="bi">SIUX</span><span class="bi">OXDOG</span><span class="bi">BABOLAT</span><span class="bi">LOK</span><span class="bi">WILSON</span><span class="bi">TECNIFIBRE</span><span class="bi">BULLPADEL</span><span class="bi">ADIDAS</span><span class="bi">HEAD</span><span class="bi">NOX</span><span class="bi">SIUX</span><span class="bi">OXDOG</span><span class="bi">BABOLAT</span><span class="bi">LOK</span><span class="bi">WILSON</span><span class="bi">TECNIFIBRE</span>
   </div>
 </div>
+<div class="sec">
+  <div class="sechdr"><div><div class="stitle">Nos <i>Catégories</i></div></div></div>
+  <div class="cats">
+    <div class="cat dk" onclick="nv('Raquettes',null)"><div class="ci">🎾</div><div class="cn">Raquettes</div><div class="cs">192 produits</div></div>
+    <div class="cat" onclick="nv('Chaussures',null)"><div class="ci">👟</div><div class="cn">Chaussures</div><div class="cs">Toutes surfaces</div></div>
+    <div class="cat" onclick="nv('Balles',null)"><div class="ci">🟡</div><div class="cn">Balles</div><div class="cs">Compétition</div></div>
+    <div class="cat" onclick="nv('Accessoires',null)"><div class="ci">🎒</div><div class="cn">Accessoires</div><div class="cs">Sacs, grips...</div></div>
+    <div class="cat" onclick="nv('Vêtements',null)"><div class="ci">👕</div><div class="cn">Vêtements</div><div class="cs">Tech & Style</div></div>
+  </div>
+</div>
+<div class="sec" style="padding-top:0">
+  <div class="sechdr">
+    <div><div class="stitle">Meilleures <i>Ventes</i></div><div class="ssub">Top raquettes 2026</div></div>
+    <button class="sall" onclick="nv('Raquettes',null)">Voir les 178 →</button>
+  </div>
+  <div class="grid" id="hg"></div>
+</div>
+<div class="promo">
+  <div class="pin">
+    <div>
+      <p style="font-family:'DM Mono',monospace;font-size:10px;color:#444;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;">Pourquoi PADL.STORE ?</p>
+      <h2>163 RAQUETTES<br><b>MEILLEURS PRIX</b></h2>
+      <p>Le plus grand catalogue en ligne de raquettes padel 2026. Produits 100% officiels, livraison express 24h partout en France.</p>
+      <button class="bta" onclick="nv('Raquettes',null)">Voir toutes les raquettes →</button>
+    </div>
+    <div class="pss">
+      <div class="ps"><div class="psn">192</div><div class="psl">Raquettes 2026</div></div>
+      <div class="ps"><div class="psn">24h</div><div class="psl">Livraison express</div></div>
+      <div class="ps"><div class="psn">30j</div><div class="psl">Retour gratuit</div></div>
+      <div class="ps"><div class="psn">-30%</div><div class="psl">vs prix boutique</div></div>
+    </div>
+  </div>
+</div>
+<div class="news">
+  <h2>-10% sur votre 1ère commande</h2>
+  <p>Inscrivez-vous et recevez votre code immédiatement.</p>
+  <div class="nf"><input type="email" placeholder="votre@email.fr"><button onclick="alert('Code PADL10 envoyé ! 🎾')">Je m'inscris</button></div>
+</div>
+</div>
 
-<!-- ══ MEILLEURES <I>VENTES</I> ══ -->
+
 <div class="sec " id="mv2026">
   <div class="sechdr">
     <div><div class="stitle">Meilleures <i>Ventes</i></div><div class="ssub">Nos 5 coups de cœur · Collection 2026</div></div>
@@ -560,6 +598,7 @@ footer{background:#111;color:#fff;padding:0;margin:0}
 
 
 <!-- ══ MEILLEURES RAQUETTES <I>2025</I> ══ -->
+
 <div class="sec sec2025" id="mv2025">
   <div class="sechdr">
     <div><div class="stitle">Meilleures Raquettes <i>2025</i></div><div class="ssub">Les indétrônables de la saison passée</div></div>
@@ -567,6 +606,8 @@ footer{background:#111;color:#fff;padding:0;margin:0}
   </div>
   <div class="grid" id="grid_mv2025"></div>
 </div>
+
+<!-- ══ SECTION BABOLAT / MARQUE FRANÇAISE ══ -->
 
 <!-- ══ SECTION BABOLAT / MARQUE FRANÇAISE ══ -->
 <section class="babolat-sec" id="babolat-france">
@@ -593,6 +634,7 @@ footer{background:#111;color:#fff;padding:0;margin:0}
     </div>
   </div>
 </section>
+
 <!-- ══ NOS CATÉGORIES ══ -->
 <section class="noscat-sec" id="nos-categories">
   <div class="noscat-inner">
@@ -635,10 +677,6 @@ footer{background:#111;color:#fff;padding:0;margin:0}
     </div>
   </div>
 </section>
-
-
-
-
 
 <!-- CATALOGUE -->
 <div class="pg" id="catPg">
@@ -690,6 +728,7 @@ footer{background:#111;color:#fff;padding:0;margin:0}
   </div>
 </div>
 
+
 <!-- ══ NOTRE HISTOIRE ══ -->
 <section class="histoire" id="notre-histoire">
   <div class="histoire-in">
@@ -719,6 +758,7 @@ footer{background:#111;color:#fff;padding:0;margin:0}
     </div>
   </div>
 </section>
+
 <!-- ══ AVIS CLIENTS ══ -->
 <section class="avis-sec">
   <div class="avis-inner">
@@ -894,8 +934,6 @@ function scrollAvis(dir){
 }
 </script>
 
-
-
 <footer>
   <div class="ft-main">
     <div class="ft-brand">
@@ -906,39 +944,25 @@ function scrollAvis(dir){
         <div>Livraison 24h - Retour 30j</div>
       </div>
     </div>
-    <div class="ft-col">
-      <h4>Infos</h4>
-      <ul>
-        <li><a href="#">Blog Padel</a></li>
-        <li><a href="#">CGV</a></li>
-        <li><a href="#">Mentions legales</a></li>
-        <li><a href="#">Confidentialite</a></li>
-        <li><a href="#">Politique de retour</a></li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h4>Besoin d aide</h4>
-      <ul>
-        <li><a href="#">Service apres-vente</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Suivi de commande</a></li>
-        <li><a href="#">Nous contacter</a></li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h4>Equipement</h4>
-      <ul>
-        <li><span onclick="nv('Raquettes',null)">Raquettes</span></li>
-        <li><span onclick="nv('Chaussures',null)">Chaussures</span></li>
-        <li><span onclick="nv('Sacs',null)">Sacs</span></li>
-        <li><span onclick="setBrand('Babolat',null)">Babolat</span></li>
-        <li><span onclick="setBrand('Bullpadel',null)">Bullpadel</span></li>
-        <li><span onclick="setBrand('Head',null)">Head</span></li>
-      </ul>
-    </div>
-    <div class="ft-news">
-      <h4>Newsletter</h4>
-      <p>Inscrivez-vous et profitez de <strong style="color:var(--y)">-10%</strong> sur votre premiere commande.</p>
+    <div class="ft-col"><h4>Infos</h4><ul>
+      <li><a href="#">CGV</a></li>
+      <li><a href="#">Mentions legales</a></li>
+      <li><a href="#">Confidentialite</a></li>
+      <li><a href="#">Politique de retour</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Aide</h4><ul>
+      <li><a href="#">SAV</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Suivi commande</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Equipement</h4><ul>
+      <li><span onclick="nv('Raquettes',null)">Raquettes</span></li>
+      <li><span onclick="nv('Chaussures',null)">Chaussures</span></li>
+      <li><span onclick="nv('Sacs',null)">Sacs</span></li>
+      <li><span onclick="setBrand('Babolat',null)">Babolat</span></li>
+    </ul></div>
+    <div class="ft-news"><h4>Newsletter</h4>
+      <p>Inscrivez-vous: <strong style="color:var(--y)">-10%</strong> sur votre premiere commande.</p>
       <div class="ft-news-form">
         <input class="ft-news-input" type="email" placeholder="votre@email.fr">
         <button class="ft-news-btn">Inscrire</button>
@@ -946,26 +970,15 @@ function scrollAvis(dir){
     </div>
   </div>
   <div class="ft-bottom">
-    <div style="display:flex;align-items:center;gap:1rem">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3)">SUIVEZ-NOUS</span>
-      <div class="ft-social">
-        <a href="#">IG</a><a href="#">YT</a><a href="#">FB</a><a href="#">TK</a>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3)">PAIEMENTS</span>
-      <div class="ft-payments">
-        <div class="ft-pay">VISA</div>
-        <div class="ft-pay">MASTERCARD</div>
-        <div class="ft-pay">AMEX</div>
-        <div class="ft-pay">PAYPAL</div>
-        <div class="ft-pay">APPLE PAY</div>
-      </div>
+    <div class="ft-social"><a href="#">IG</a><a href="#">YT</a><a href="#">FB</a></div>
+    <div class="ft-payments">
+      <div class="ft-pay">VISA</div><div class="ft-pay">MC</div>
+      <div class="ft-pay">AMEX</div><div class="ft-pay">PAYPAL</div>
     </div>
   </div>
   <div class="ft-copy">
-    <span>2026 PADL.STORE - Tous droits reserves</span>
-    <span><a href="#">CGV</a> - <a href="#">Mentions legales</a> - <a href="#">Confidentialite</a></span>
+    <span>2026 PADL.STORE</span>
+    <span><a href="#">CGV</a> - <a href="#">Mentions legales</a></span>
   </div>
 </footer>
 
@@ -1052,17 +1065,7 @@ function mC(p,i){
 }
 function rG(id,items){const el=document.getElementById(id);if(el)el.innerHTML=items.map(mC).join('');}
 function render(){const f=gF();document.getElementById('ccount').textContent=f.length+' produit'+(f.length>1?'s':'');document.getElementById('emp').style.display=f.length?'none':'block';rG('cg',f);}
-function sp(n){
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
-  document.getElementById(n+'Pg').classList.add('on');
-  // Cacher/montrer les sections hors-pg
-  const horsPg=['notre-histoire','avis-sec-wrap','footer'];
-  horsPg.forEach(id=>{
-    const el=document.getElementById(id)||document.querySelector('.'+id)||document.querySelector('footer');
-    if(el) el.style.display=(n==='home'?'':'none');
-  });
-  window.scrollTo(0,0);
-}
+function sp(n){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById(n+'Pg').classList.add('on');window.scrollTo(0,0);}
 function goH(){sp('home');}
 function gb(){sp(lp==='cat'?'cat':'home');}
 function nv(cat,el){
@@ -1685,10 +1688,11 @@ function galNav(dir) {
 }
 
 initBB();
-const BVslugs=['nox-at10-genius-12k-xtreme-2026.webp', 'adidas-metalbone-2026.webp', 'bullpadel-vertex-05-2026.webp', 'babolat-counter-viper-26-2026.webp', 'siux-electra-st5-stupa-pro-rouge-2026.webp'];
+rG('hg',P.filter(p=>p.Best&&p.cat==='Raquettes').slice(0,8));
+const BVslugs=['nox-at10-genius-12k-xtreme-2026.webp','adidas-metalbone-2026.webp','bullpadel-vertex-05-2026.webp','babolat-counter-viper-26-2026.webp','siux-electra-st5-stupa-pro-rouge-2026.webp'];
 const BVprods=BVslugs.map(s=>P.find(p=>p.img===s)).filter(Boolean);
 rG('grid_mv2026',BVprods);
-const BV2025slugs=['adidas-metalbone-34-2025.webp', 'wilson-bela-pro-v3-2025.webp', 'babolat-counter-viper-25-2025.webp', 'babolat-air-viper-25-2025.webp', 'nox-at10-genius-18k-alum-2025.webp'];
+const BV2025slugs=['adidas-metalbone-34-2025.webp','wilson-bela-pro-v3-2025.webp','babolat-counter-viper-25-2025.webp','babolat-air-viper-25-2025.webp','nox-at10-genius-18k-alum-2025.webp'];
 const BV2025prods=BV2025slugs.map(s=>P.find(p=>p.img===s)).filter(Boolean);
 rG('grid_mv2025',BV2025prods);
 </script>
