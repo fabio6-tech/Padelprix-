@@ -480,31 +480,27 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
   .noscat-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-/* ── NOUVEAU FOOTER ── */
+/* FOOTER */
 footer{background:#111;color:#fff;padding:0;margin:0}
 .ft-main{max-width:1280px;margin:0 auto;padding:3.5rem 2.5rem 2rem;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.6fr;gap:3rem}
 .ft-brand .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:#fff;margin-bottom:1rem}
 .ft-brand .ft-logo b{color:var(--y)}
 .ft-brand .ft-contact{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.9}
 .ft-brand .ft-contact a{color:rgba(255,255,255,.5);text-decoration:none}
-.ft-brand .ft-contact a:hover{color:var(--y)}
 .ft-col h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:1.2rem;text-transform:uppercase}
 .ft-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
-.ft-col ul li a{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
-.ft-col ul li a:hover{color:var(--y)}
-.ft-col ul li span{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);cursor:pointer;transition:color .15s}
-.ft-col ul li span:hover{color:var(--y)}
+.ft-col ul li a,.ft-col ul li span{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;cursor:pointer;transition:color .15s}
+.ft-col ul li a:hover,.ft-col ul li span:hover{color:var(--y)}
 .ft-news h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:.6rem;text-transform:uppercase}
 .ft-news p{font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem}
 .ft-news-form{display:flex;flex-direction:column;gap:.6rem}
 .ft-news-input{background:#1e1e1e;border:1px solid #333;color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;padding:.7rem 1rem;border-radius:6px;outline:none}
 .ft-news-input::placeholder{color:#555}
-.ft-news-input:focus{border-color:var(--y)}
 .ft-news-btn{background:var(--y);color:var(--k);border:none;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;padding:.7rem 1rem;border-radius:6px;cursor:pointer}
 .ft-bottom{border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .ft-social{display:flex;gap:.7rem}
-.ft-social a{width:38px;height:38px;border-radius:50%;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;transition:background .15s}
-.ft-social a:hover{background:#2a2a2a}
+.ft-social a{width:38px;height:38px;border-radius:50%;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,.5);transition:background .15s}
+.ft-social a:hover{background:#2a2a2a;color:#fff}
 .ft-payments{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
 .ft-pay{background:#1e1e1e;border:1px solid #2a2a2a;border-radius:5px;padding:.3rem .55rem;font-family:'DM Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.06em}
 .ft-copy{font-family:'DM Sans',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:.9rem 2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
@@ -927,7 +923,7 @@ function scrollAvis(dir){
       </ul>
     </div>
     <div class="ft-col">
-      <h4>Besoin d aide ?</h4>
+      <h4>Besoin d aide</h4>
       <ul>
         <li><a href="#">Service apres-vente</a></li>
         <li><a href="#">FAQ</a></li>
@@ -942,7 +938,6 @@ function scrollAvis(dir){
         <li><span onclick="nv('Raquettes',null)">Raquettes de padel</span></li>
         <li><span onclick="nv('Chaussures',null)">Chaussures de padel</span></li>
         <li><span onclick="nv('Sacs',null)">Sacs de padel</span></li>
-        <li><span onclick="nv('Vetements',null)">Vetements de padel</span></li>
         <li><span onclick="setBrand('Babolat',null)">Raquettes Babolat</span></li>
         <li><span onclick="setBrand('Bullpadel',null)">Raquettes Bullpadel</span></li>
         <li><span onclick="setBrand('Head',null)">Raquettes Head</span></li>
@@ -953,22 +948,22 @@ function scrollAvis(dir){
       <p>Inscrivez-vous et profitez de <strong style="color:var(--y)">-10%</strong> sur votre premiere commande.</p>
       <div class="ft-news-form">
         <input class="ft-news-input" type="email" placeholder="votre@email.fr">
-        <button class="ft-news-btn">S inscrire</button>
+        <button class="ft-news-btn">Inscrire</button>
       </div>
     </div>
   </div>
   <div class="ft-bottom">
     <div style="display:flex;align-items:center;gap:1rem">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.1em">SUIVEZ-NOUS</span>
+      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3)">SUIVEZ-NOUS</span>
       <div class="ft-social">
-        <a href="#" title="Instagram">In</a>
-        <a href="#" title="YouTube">YT</a>
-        <a href="#" title="Facebook">Fb</a>
-        <a href="#" title="TikTok">Tk</a>
+        <a href="#">IG</a>
+        <a href="#">YT</a>
+        <a href="#">FB</a>
+        <a href="#">TK</a>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.1em">PAIEMENTS</span>
+      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3)">PAIEMENTS</span>
       <div class="ft-payments">
         <div class="ft-pay">VISA</div>
         <div class="ft-pay">MASTERCARD</div>
@@ -980,11 +975,7 @@ function scrollAvis(dir){
   </div>
   <div class="ft-copy">
     <span>2026 PADL.STORE - Tous droits reserves</span>
-    <span>
-      <a href="#">CGV</a> - 
-      <a href="#">Mentions legales</a> - 
-      <a href="#">Confidentialite</a>
-    </span>
+    <span><a href="#">CGV</a> - <a href="#">Mentions legales</a> - <a href="#">Confidentialite</a></span>
   </div>
 </footer>
 
