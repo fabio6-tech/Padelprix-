@@ -512,6 +512,13 @@ footer{background:#111;color:#fff;padding:0;margin:0}
 .ft-copy a:hover{color:rgba(255,255,255,.6)}
 @media(max-width:900px){.ft-main{grid-template-columns:1fr 1fr;gap:2rem}}
 @media(max-width:500px){.ft-main{grid-template-columns:1fr}}
+
+.histoire{display:none}
+.avis-sec{display:none}
+footer{display:none}
+body.on-home .histoire{display:block}
+body.on-home .avis-sec{display:block}
+body.on-home footer{display:block}
 </style>
 </head>
 <body>
@@ -1071,7 +1078,7 @@ function mC(p,i){
 }
 function rG(id,items){const el=document.getElementById(id);if(el)el.innerHTML=items.map(mC).join('');}
 function render(){const f=gF();document.getElementById('ccount').textContent=f.length+' produit'+(f.length>1?'s':'');document.getElementById('emp').style.display=f.length?'none':'block';rG('cg',f);}
-function sp(n){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById(n+'Pg').classList.add('on');window.scrollTo(0,0);}
+function sp(n){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById(n+'Pg').classList.add('on');document.body.className=n==='home'?'on-home':'';window.scrollTo(0,0);}
 function goH(){sp('home');}
 function gb(){sp(lp==='cat'?'cat':'home');}
 function nv(cat,el){
@@ -1700,6 +1707,7 @@ rG('grid_mv2026',BVprods);
 const BV2025slugs=['adidas-metalbone-34-2025.webp', 'wilson-bela-pro-v3-2025.webp', 'babolat-counter-viper-25-2025.webp', 'babolat-air-viper-25-2025.webp', 'nox-at10-genius-18k-alum-2025.webp'];
 const BV2025prods=BV2025slugs.map(s=>P.find(p=>p.img===s)).filter(Boolean);
 rG('grid_mv2025',BV2025prods);
-</script>
+
+document.body.className='on-home';</script>
 </body>
 </html>
