@@ -46,6 +46,199 @@ nav{display:flex;gap:2px;flex:1;overflow-x:auto;}
 .ssub{font-size:13px;color:var(--m);margin-top:4px;}
 .sall{font-family:'DM Mono',monospace;font-size:11px;color:var(--m);border:1.5px solid var(--bd);border-radius:20px;padding:6px 14px;cursor:pointer;white-space:nowrap;background:none;}
 .sall:hover{border-color:var(--k);color:var(--k);}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.cat{background:var(--w);border:2px solid var(--bd);border-radius:12px;padding:18px 10px;cursor:pointer;text-align:center;transition:all .2s;}
+.cat:hover{border-color:var(--k);transform:translateY(-3px);}
+.cat.dk{background:var(--k);border-color:var(--k);}
+.cat.dk .cn{color:var(--w);}
+.cat.dk .cs{color:#444;}
+.ci{font-size:32px;margin-bottom:6px;}
+.cn{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.5px;}
+.cs{font-size:10px;color:var(--m);margin-top:2px;}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;align-items:center;}
+.fb,.fbrand{background:var(--w);border:2px solid var(--bd);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;}
+.fb:hover,.fb.on,.fbrand:hover,.fbrand.on{background:var(--k);color:var(--w);border-color:var(--k);}
+.fsort{margin-left:auto;background:var(--w);border:2px solid var(--bd);border-radius:20px;padding:5px 12px;font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;outline:none;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+.pc{background:var(--w);border:2px solid var(--bd);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .22s;position:relative;}
+.pc:hover{border-color:var(--k);transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
+.pbdg{position:absolute;top:7px;left:7px;z-index:2;display:flex;flex-direction:column;gap:3px;}
+.bdg{padding:2px 7px;border-radius:20px;font-family:'DM Mono',monospace;font-size:8px;font-weight:600;letter-spacing:1px;}
+.bn{background:var(--k);color:var(--y);}
+.bs{background:var(--r);color:#fff;}
+.bb{background:var(--g);color:#fff;}
+.pimg{height:170px;background:#ffffff;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.pimg img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .3s;}
+.pc:hover .pimg img{transform:scale(1.05);}
+.pfav{position:absolute;top:7px;right:7px;width:28px;height:28px;background:var(--w);border:1.5px solid var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;transition:all .2s;z-index:3;}
+.pfav:hover,.pfav.on{border-color:var(--r);background:var(--r);color:#fff;}
+.pbdy{padding:11px;}
+.pbr{font-family:'DM Mono',monospace;font-size:9px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+.pnm{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.5px;line-height:1.2;margin-bottom:7px;}
+.ptgs{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:8px;}
+.ptg{background:var(--s);border-radius:4px;padding:2px 6px;font-size:9px;color:var(--m);}
+.ptg.pro{background:rgba(255,51,51,.1);color:var(--r);}
+.ptg.int{background:rgba(255,140,0,.1);color:var(--o);}
+.ptg.ini{background:rgba(0,201,110,.1);color:var(--g);}
+.pbot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1.5px solid var(--bd);}
+.pold{font-size:10px;color:var(--m);text-decoration:line-through;margin-bottom:1px;}
+.ppr{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.5px;}
+.ppr.s{color:var(--r);}
+.padd{background:var(--k);color:var(--w);border:none;border-radius:6px;padding:7px 10px;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.padd:hover{background:var(--y);color:var(--k);}
+.promo{background:var(--k);padding:52px 20px;}
+.pin{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.pin h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,50px);color:var(--w);letter-spacing:-1px;line-height:.95;margin-bottom:12px;}
+.pin h2 b{color:var(--y);font-weight:400;}
+.pin p{color:#555;font-size:14px;line-height:1.7;margin-bottom:20px;}
+.pss{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ps{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px;}
+.psn{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--y);}
+.psl{font-size:11px;color:#444;margin-top:2px;}
+.news{background:var(--y);padding:48px 20px;text-align:center;}
+.news h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,42px);letter-spacing:-1px;color:var(--k);margin-bottom:8px;}
+.news p{font-size:13px;color:#555;margin-bottom:18px;}
+.nf{display:flex;gap:10px;max-width:380px;margin:0 auto;}
+.nf input{flex:1;background:var(--w);border:2px solid var(--k);border-radius:10px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
+.nf button{background:var(--k);color:var(--w);border:none;border-radius:10px;padding:11px 16px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;cursor:pointer;white-space:nowrap;}
+footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
+.fin{max-width:1280px;margin:0 auto;}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:32px;}
+.flo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;margin-bottom:10px;}
+.flo b{color:var(--r);font-weight:400;}
+.fde{font-size:12px;color:#333;line-height:1.6;margin-bottom:12px;}
+.fso{display:flex;gap:6px;}
+.fsi{width:30px;height:30px;background:rgba(255,255,255,.07);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;}
+.fcol h4{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;margin-bottom:10px;}
+.fls{display:flex;flex-direction:column;gap:7px;}
+.fl{font-size:12px;color:#333;cursor:pointer;transition:color .2s;}
+.fl:hover{color:var(--w);}
+.fbot{border-top:1px solid #161616;padding-top:18px;display:flex;align-items:center;justify-content:space-between;}
+.fcp{font-size:11px;color:#2a2a2a;}
+.fbgs{display:flex;gap:5px;}
+.fbg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:3px 8px;font-family:'DM Mono',monospace;font-size:8px;color:#333;letter-spacing:1px;}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;}
+.ov.on{opacity:1;pointer-events:all;}
+.cp{position:fixed;right:0;top:0;bottom:0;width:370px;background:var(--w);z-index:201;transform:translateX(100%);transition:transform .32s;display:flex;flex-direction:column;}
+.ov.on .cp{transform:translateX(0);}
+.chd{padding:18px;border-bottom:2px solid var(--bd);display:flex;align-items:center;justify-content:space-between;}
+.chd h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;}
+.ccl{background:var(--s);border:none;border-radius:6px;width:30px;height:30px;cursor:pointer;font-size:14px;}
+.clist{flex:1;overflow-y:auto;padding:14px;}
+.cemp{text-align:center;padding:44px 20px;color:var(--m);}
+.cit{display:flex;gap:10px;padding:10px 0;border-bottom:1.5px solid var(--bd);}
+.cit-img{width:56px;height:56px;background:#ffffff;border-radius:7px;overflow:hidden;flex-shrink:0;border:1px solid var(--bd);}
+.cit-img img{width:100%;height:100%;object-fit:contain;padding:3px;}
+.cit-inf{flex:1;}
+.cit-br{font-family:'DM Mono',monospace;font-size:9px;color:var(--m);}
+.cit-nm{font-size:12px;font-weight:600;margin:2px 0;}
+.cit-pr{font-family:'Bebas Neue',sans-serif;font-size:15px;}
+.cit-rm{color:var(--m);cursor:pointer;font-size:15px;align-self:flex-start;padding:2px;}
+.cft{padding:16px;border-top:2px solid var(--bd);}
+.cto{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.cto span:first-child{font-size:14px;font-weight:600;}
+.ctp{font-family:'Bebas Neue',sans-serif;font-size:26px;}
+.ckbtn{display:block;width:100%;background:var(--k);color:var(--w);border:none;border-radius:10px;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;}
+.csec{text-align:center;font-size:11px;color:var(--m);margin-top:7px;}
+.pg{display:none;}
+.pg.on{display:block;}
+.back{margin-bottom:18px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--m);font-size:13px;}
+.back:hover{color:var(--k);}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.diw{background:#ffffff;border-radius:14px;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid var(--bd);}
+.diw img{width:100%;height:100%;object-fit:contain;padding:22px;}
+.dbr{font-family:'DM Mono',monospace;font-size:10px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+.dnm{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,40px);letter-spacing:-1px;line-height:1;margin-bottom:11px;}
+.dpw{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.dpr{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:-1px;}
+.dol{font-size:18px;color:var(--m);text-decoration:line-through;}
+.dsv{background:var(--r);color:#fff;border-radius:20px;padding:3px 11px;font-size:12px;font-weight:600;}
+.dde{font-size:13px;color:#555;line-height:1.7;margin-bottom:18px;}
+.dsp{background:var(--s);border-radius:11px;padding:14px;margin-bottom:18px;}
+.dsr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bd);font-size:13px;}
+.dsr:last-child{border:none;}
+.dsr span:first-child{color:var(--m);}
+.dsr span:last-child{font-weight:600;}
+.scs{margin-bottom:18px;}
+.scr{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
+.scl{font-size:12px;color:var(--m);width:86px;flex-shrink:0;}
+.sct{flex:1;height:5px;background:var(--bd);border-radius:3px;overflow:hidden;}
+.scf{height:100%;background:var(--k);border-radius:3px;transition:width 1s ease;}
+.scv{font-family:'DM Mono',monospace;font-size:11px;width:24px;text-align:right;}
+.qw{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.qb{width:32px;height:32px;background:var(--s);border:2px solid var(--bd);border-radius:6px;font-size:15px;cursor:pointer;font-weight:600;}
+.qn{font-family:'Bebas Neue',sans-serif;font-size:20px;width:28px;text-align:center;}
+.dadd{width:100%;background:var(--k);color:var(--w);border:none;border-radius:10px;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;margin-bottom:8px;}
+.dwh{width:100%;background:var(--s);border:2px solid var(--bd);border-radius:10px;padding:12px;font-family:'Bebas Neue',sans-serif;font-size:14px;cursor:pointer;}
+.tr{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--m);}
+.emp{text-align:center;padding:56px 20px;color:var(--m);}
+.emp-i{font-size:44px;margin-bottom:10px;}
+.emp h3{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--k);margin-bottom:5px;}
+@media(max-width:900px){.dgrid,.pin,.ftop{grid-template-columns:1fr;}nav{display:none;}.srch{width:110px;}.cp{width:100%;}.cats{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:580px){.cats{grid-template-columns:repeat(2,1fr);}.ftop{grid-template-columns:1fr;}.nf{flex-direction:column;}.hstats{gap:20px;}.diw{height:240px;}}
+@keyframes fu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── GALERIE MULTI-PHOTOS ── */
+.gal-main{width:100%;aspect-ratio:1;border-radius:14px;background:var(--lc);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.gal-main img{width:100%;height:100%;object-fit:contain;padding:20px;transition:opacity .25s;}
+.gal-main img.fade{opacity:0;}
+.gal-thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.gal-thumb{width:64px;height:64px;border-radius:8px;background:var(--lc);cursor:pointer;overflow:hidden;border:2px solid transparent;transition:border-color .2s,transform .2s;flex-shrink:0;}
+.gal-thumb:hover{transform:scale(1.05);}
+.gal-thumb.active{border-color:var(--a);}
+.gal-thumb img{width:100%;height:100%;object-fit:contain;padding:4px;}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 8px;pointer-events:none;}
+.gal-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);border:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;pointer-events:all;transition:background .2s;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.gal-btn:hover{background:#fff;}
+.gal-dot-row{display:flex;justify-content:center;gap:5px;margin-top:8px;}
+.gal-dot{width:7px;height:7px;border-radius:50%;background:var(--bc);cursor:pointer;transition:background .2s,transform .2s;}
+.gal-dot.active{background:var(--a);transform:scale(1.3);}
+
+</style>
+</head>
+
+<body>
+<style>
+:root{--bg:#f7f5f2;--w:#fff;--k:#111;--y:#e8ff00;--r:#ff3333;--bd:#e0ddd8;--m:#888;--g:#00c96e;--s:#edeae5;--o:#ff8c00;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--k);font-family:'DM Sans',sans-serif;}
+.bar{background:var(--k);color:var(--y);text-align:center;padding:9px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;}
+header{background:var(--w);border-bottom:2px solid var(--k);position:sticky;top:0;z-index:100;}
+.hdr{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px;height:64px;}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;cursor:pointer;flex-shrink:0;}
+.logo b{color:var(--r);font-weight:400;}
+nav{display:flex;gap:2px;flex:1;overflow-x:auto;}
+.nb{padding:7px 12px;font-size:13px;font-weight:500;cursor:pointer;border-radius:6px;border:none;background:none;white-space:nowrap;transition:background .2s;}
+.nb:hover{background:var(--s);}
+.nb.on{background:var(--k);color:var(--w);}
+.srch{display:flex;align-items:center;background:var(--s);border:1.5px solid var(--bd);border-radius:8px;padding:7px 12px;gap:7px;width:180px;flex-shrink:0;}
+.srch input{background:none;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:13px;width:100%;}
+.cbtn{background:var(--k);color:var(--w);border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0;}
+.cnum{background:var(--y);color:var(--k);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.hero{background:var(--k);padding:60px 20px;text-align:center;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.025);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,80px);color:var(--w);letter-spacing:-1px;line-height:.92;margin-bottom:14px;position:relative;}
+.hero h1 i{color:var(--y);font-style:normal;}
+.hero p{color:#666;font-size:14px;margin-bottom:24px;position:relative;}
+.hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
+.bta{background:var(--y);color:var(--k);border:none;border-radius:10px;padding:12px 24px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;transition:transform .2s;}
+.bta:hover{transform:scale(1.04);}
+.btb{background:transparent;color:var(--w);border:2px solid #333;border-radius:10px;padding:12px 24px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;}
+.hstats{display:flex;justify-content:center;gap:40px;margin-top:36px;padding-top:28px;border-top:1px solid #1e1e1e;position:relative;}
+.hsn{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--w);}
+.hsl{font-size:11px;color:#444;margin-top:2px;}
+.brands-bar{background:var(--y);padding:11px 20px;overflow:hidden;}
+.btrack{display:flex;gap:40px;animation:scroll 22s linear infinite;white-space:nowrap;}
+.bi{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--k);letter-spacing:1px;flex-shrink:0;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.sec{max-width:1280px;margin:0 auto;padding:44px 20px;}
+.sechdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;}
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3.5vw,38px);letter-spacing:-1px;line-height:1;}
+.stitle i{font-style:normal;color:var(--r);}
+.ssub{font-size:13px;color:var(--m);margin-top:4px;}
+.sall{font-family:'DM Mono',monospace;font-size:11px;color:var(--m);border:1.5px solid var(--bd);border-radius:20px;padding:6px 14px;cursor:pointer;white-space:nowrap;background:none;}
+.sall:hover{border-color:var(--k);color:var(--k);}
 .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .cat{background:var(--w);border:2px solid var(--bd);border-radius:12px;padding:18px 10px;cursor:pointer;text-align:center;transition:all .2s;}
 .cat:hover{border-color:var(--k);transform:translateY(-3px);}
@@ -141,7 +334,7 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
 .ckbtn{display:block;width:100%;background:var(--k);color:var(--w);border:none;border-radius:10px;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;}
 .csec{text-align:center;font-size:11px;color:var(--m);margin-top:7px;}
 .pg{display:none;}
-.pg.on{display:block;position:fixed;top:0;left:0;width:100%;height:100%;overflow-y:auto;z-index:9999;background:var(--bg);}
+.pg.on{display:block;}
 .back{margin-bottom:18px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--m);font-size:13px;}
 .back:hover{color:var(--k);}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
@@ -379,7 +572,7 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
 .babolat-sec{background:#fff;padding:0;border-top:1px solid #e8e4de}
 .babolat-in{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:520px}
 .bab-photo{position:relative;overflow:hidden;background:#f0ece6;min-height:500px}
-.bab-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.bab-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;position:absolute;top:0;left:0;bottom:0;right:0}
 .bab-photo-badge{
   position:absolute;top:1.5rem;left:1.5rem;
   background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
@@ -430,7 +623,7 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
 .bab-btn:hover{background:#c1121f}
 @media(max-width:900px){
   .babolat-in{grid-template-columns:1fr}
-  .bab-photo{height:360px;background:#f0ece6}
+  .bab-photo{height:420px}
   .bab-right{padding:3rem 2rem}
 }
 
@@ -479,61 +672,7 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
 @media(max-width:768px){
   .noscat-grid{grid-template-columns:repeat(2,1fr)}
 }
-
-/* ── NOUVEAU FOOTER ── */
-footer{background:#111;color:#fff;padding:0;margin:0}
-.ft-main{max-width:1280px;margin:0 auto;padding:3.5rem 2.5rem 2rem;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.6fr;gap:3rem}
-.ft-brand .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:#fff;margin-bottom:1rem}
-.ft-brand .ft-logo b{color:var(--y)}
-.ft-brand .ft-contact{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.9}
-.ft-brand .ft-contact a{color:rgba(255,255,255,.5);text-decoration:none}
-.ft-brand .ft-contact a:hover{color:var(--y)}
-.ft-col h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:1.2rem;text-transform:uppercase}
-.ft-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
-.ft-col ul li a{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
-.ft-col ul li a:hover{color:var(--y)}
-.ft-col ul li span{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);cursor:pointer;transition:color .15s}
-.ft-col ul li span:hover{color:var(--y)}
-.ft-news h4{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:.6rem;text-transform:uppercase}
-.ft-news p{font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem}
-.ft-news-form{display:flex;flex-direction:column;gap:.6rem}
-.ft-news-input{background:#1e1e1e;border:1px solid #333;color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;padding:.7rem 1rem;border-radius:6px;outline:none}
-.ft-news-input::placeholder{color:#555}
-.ft-news-input:focus{border-color:var(--y)}
-.ft-news-btn{background:var(--y);color:var(--k);border:none;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;padding:.7rem 1rem;border-radius:6px;cursor:pointer}
-.ft-bottom{border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.ft-social{display:flex;gap:.7rem}
-.ft-social a{width:38px;height:38px;border-radius:50%;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;transition:background .15s}
-.ft-social a:hover{background:#2a2a2a}
-.ft-payments{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
-.ft-pay{background:#1e1e1e;border:1px solid #2a2a2a;border-radius:5px;padding:.3rem .55rem;font-family:'DM Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.06em}
-.ft-copy{font-family:'DM Sans',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);border-top:1px solid #1e1e1e;max-width:1280px;margin:0 auto;padding:.9rem 2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-.ft-copy a{color:rgba(255,255,255,.3);text-decoration:none}
-.ft-copy a:hover{color:rgba(255,255,255,.6)}
-@media(max-width:900px){.ft-main{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:500px){.ft-main{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div class="bar">🎾 LIVRAISON GRATUITE dès 79€ &nbsp;·&nbsp; ⚡ 192 PRODUITS 2026 &nbsp;·&nbsp; 🏆 CODE PADL15 = -15% &nbsp;·&nbsp; 🚚 EXPÉDITION 24H &nbsp;·&nbsp; ↩️ 30J SATISFAIT OU REMBOURSÉ</div>
-<header>
-  <div class="hdr">
-    <div class="logo" onclick="goH()">PADL<b>.</b>STORE</div>
-    <nav>
-      <button class="nb on" onclick="nv('Tous',this)">Tous</button>
-      <button class="nb" onclick="nv('Raquettes',this)">Raquettes</button>
-      <button class="nb" onclick="nv('Chaussures',this)">Chaussures</button>
-      <button class="nb" onclick="nv('Balles',this)">Balles</button>
-      <button class="nb" onclick="nv('Sacs',this)">Sacs</button>
-      <button class="nb" onclick="nv('Accessoires',this)">Accessoires</button>
-    </nav>
-    <div class="srch"><span>🔍</span><input type="text" id="si" placeholder="Rechercher..." oninput="ds()"></div>
-    <button class="cbtn" onclick="tC()">🛒 Panier <div class="cnum" id="cn">0</div></button>
-  </div>
-</header>
-
-<!-- HOME -->
-<div class="pg on" id="homePg">
+</style><div class="pg on" id="homePg">
 <section class="hero">
   <div class="hero-bg">PADEL 2026</div>
   <h1>192 PRODUITS PADEL<br><i>AU MEILLEUR PRIX</i></h1>
@@ -641,9 +780,7 @@ footer{background:#111;color:#fff;padding:0;margin:0}
       </div>
 
     </div>
-  
-
-</div>
+  </div>
 </section>
 
 
@@ -687,6 +824,73 @@ footer{background:#111;color:#fff;padding:0;margin:0}
   </div>
 </div>
 
+<!-- CART -->
+<div class="ov" id="ov" onclick="cC(event)">
+  <div class="cp">
+    <div class="chd"><h3>Mon Panier 🛒</h3><button class="ccl" onclick="tC()">✕</button></div>
+    <div class="clist" id="cl"><div class="cemp"><div style="font-size:38px;margin-bottom:10px">🎾</div><p>Votre panier est vide</p></div></div>
+    <div class="cft">
+      <div class="cto"><span>Total</span><span class="ctp" id="ctp">0€</span></div>
+      <button class="ckbtn" onclick="alert('Paiement bientôt disponible!\nContact: padlstore@gmail.com')">Commander →</button>
+      <div class="csec">🔒 Paiement sécurisé · CB · PayPal</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- CATALOGUE -->
+<div class="pg" id="catPg">
+  <div class="sec">
+    <div class="sechdr">
+      <div><div class="stitle" id="ctitle">Tous les <i>Produits</i></div><div class="ssub" id="csub"></div></div>
+      <div id="ccount" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--m);"></div>
+    </div>
+    <div class="filters">
+      <button class="fb on" onclick="sf('Tous',this)">Tous</button>
+      <button class="fb" onclick="sf('Pro',this)">🔴 Pro</button>
+      <button class="fb" onclick="sf('Intermédiaire',this)">🟠 Intermédiaire</button>
+      <button class="fb" onclick="sf('Initiation',this)">🟢 Initiation</button>
+      <button class="fb" onclick="sf('Diamant',this)">◆ Diamant</button>
+      <button class="fb" onclick="sf('Hybride',this)">◈ Hybride</button>
+      <button class="fb" onclick="sf('Ronde',this)">● Ronde</button>
+      <button class="fb" onclick="sf('Promo',this)">🔥 Promo</button>
+      <select class="fsort" onchange="ss(this.value)">
+        <option value="def">Trier par défaut</option>
+        <option value="asc">Prix croissant</option>
+        <option value="desc">Prix décroissant</option>
+        <option value="promo">Promos d'abord</option>
+      </select>
+    </div>
+    <div class="filters" id="brandBar"></div>
+    <div class="grid" id="cg"></div>
+    <div id="emp" class="emp" style="display:none"><div class="emp-i">🎾</div><h3>Aucun résultat</h3><p>Essayez un autre terme.</p></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div class="pg" id="detPg">
+  <div class="sec">
+    <div class="back" onclick="gb()">← Retour</div>
+    <div class="dgrid" id="dc"></div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="ov" id="ov" onclick="cC(event)">
+  <div class="cp">
+    <div class="chd"><h3>Mon Panier 🛒</h3><button class="ccl" onclick="tC()">✕</button></div>
+    <div class="clist" id="cl"><div class="cemp"><div style="font-size:38px;margin-bottom:10px">🎾</div><p>Votre panier est vide</p></div></div>
+    <div class="cft">
+      <div class="cto"><span>Total</span><span class="ctp" id="ctp">0€</span></div>
+      <button class="ckbtn" onclick="alert('Paiement bientôt disponible!\nContact: padlstore@gmail.com')">Commander →</button>
+      <div class="csec">🔒 Paiement sécurisé · CB · PayPal</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ NOTRE HISTOIRE ══ -->
 <section class="histoire" id="notre-histoire">
   <div class="histoire-in">
     <div class="hist-left">
@@ -882,115 +1086,79 @@ footer{background:#111;color:#fff;padding:0;margin:0}
     </div>
   </div>
 </section>
-<script>
-function scrollAvis(dir){
-  const el=document.getElementById('avisCards');
-  el.scrollBy({left:dir*300,behavior:'smooth'});
-}
-</script>
 <footer>
-  <div class="ft-main">
-    <div class="ft-brand">
-      <div class="ft-logo">PADL<b>.</b>STORE</div>
-      <div class="ft-contact">
-        <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bebfafffef7ebe9f2e3b5f8f4f5effaf8efdbfcf6faf2f7b5f8f4f6">[email&#160;protected]</a></div>
-        <br>
-        <div>France</div>
-        <div>Livraison 24h - Retour 30j</div>
+  <div class="fin">
+    <div class="ftop">
+      <div>
+        <div class="flo">PADL<b>.</b>STORE</div>
+        <div class="fde">192 produits padel. Produits officiels, livraison 24h, retour 30j gratuit.</div>
+        <div class="fso"><div class="fsi">📘</div><div class="fsi">📸</div><div class="fsi">🎵</div><div class="fsi">▶️</div></div>
       </div>
+      <div class="fcol"><h4>Marques</h4><div class="fls">
+        <div class="fl" onclick="setBrand('Bullpadel',null)">Bullpadel (32)</div>
+        <div class="fl" onclick="setBrand('Adidas',null)">Adidas (28)</div>
+        <div class="fl" onclick="setBrand('Siux',null)">Siux (24)</div>
+        <div class="fl" onclick="setBrand('Nox',null)">Nox (19)</div>
+        <div class="fl" onclick="setBrand('Head',null)">Head (15)</div>
+      </div></div>
+      <div class="fcol"><h4>Service</h4><div class="fls">
+        <div class="fl">Livraison & Retours</div>
+        <div class="fl">Choisir sa raquette</div>
+        <div class="fl">Contact</div>
+        <div class="fl">FAQ</div>
+      </div></div>
+      <div class="fcol"><h4>Autres marques</h4><div class="fls">
+        <div class="fl" onclick="setBrand('Lok',null)">Lok (13)</div>
+        <div class="fl" onclick="setBrand('Oxdog',null)">Oxdog (12)</div>
+        <div class="fl" onclick="setBrand('Babolat',null)">Babolat (9)</div>
+        
+        <div class="fl" onclick="setBrand('Wilson',null)">Wilson (4)</div>
+        <div class="fl" onclick="setBrand('Tecnifibre',null)">Tecnifibre (7)</div>
+      </div></div>
     </div>
-    <div class="ft-col">
-      <h4>Infos</h4>
-      <ul>
-        <li><a href="#">Blog Padel</a></li>
-        <li><a href="#">CGV</a></li>
-        <li><a href="#">Mentions legales</a></li>
-        <li><a href="#">Conditions utilisation</a></li>
-        <li><a href="#">Confidentialite</a></li>
-        <li><a href="#">Politique de retour</a></li>
-      </ul>
+    <div class="fbot">
+      <div class="fcp">© 2026 PADL.STORE — Tous droits réservés</div>
+      <div class="fbgs"><div class="fbg">🔒 SSL</div><div class="fbg">✅ OFFICIEL</div><div class="fbg">🚚 24H</div><div class="fbg">↩️ 30J</div></div>
     </div>
-    <div class="ft-col">
-      <h4>Besoin d aide ?</h4>
-      <ul>
-        <li><a href="#">Service apres-vente</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Lexique Padel</a></li>
-        <li><a href="#">Suivi de commande</a></li>
-        <li><a href="#">Nous contacter</a></li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h4>Equipement</h4>
-      <ul>
-        <li><span onclick="nv('Raquettes',null)">Raquettes de padel</span></li>
-        <li><span onclick="nv('Chaussures',null)">Chaussures de padel</span></li>
-        <li><span onclick="nv('Sacs',null)">Sacs de padel</span></li>
-        <li><span onclick="nv('Vetements',null)">Vetements de padel</span></li>
-        <li><span onclick="setBrand('Babolat',null)">Raquettes Babolat</span></li>
-        <li><span onclick="setBrand('Bullpadel',null)">Raquettes Bullpadel</span></li>
-        <li><span onclick="setBrand('Head',null)">Raquettes Head</span></li>
-      </ul>
-    </div>
-    <div class="ft-news">
-      <h4>Newsletter</h4>
-      <p>Inscrivez-vous et profitez de <strong style="color:var(--y)">-10%</strong> sur votre premiere commande.</p>
-      <div class="ft-news-form">
-        <input class="ft-news-input" type="email" placeholder="votre@email.fr">
-        <button class="ft-news-btn">S inscrire</button>
-      </div>
-    </div>
-  </div>
-  <div class="ft-bottom">
-    <div style="display:flex;align-items:center;gap:1rem">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.1em">SUIVEZ-NOUS</span>
-      <div class="ft-social">
-        <a href="#" title="Instagram">In</a>
-        <a href="#" title="YouTube">YT</a>
-        <a href="#" title="Facebook">Fb</a>
-        <a href="#" title="TikTok">Tk</a>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-      <span style="font-family:'DM Sans';font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.1em">PAIEMENTS</span>
-      <div class="ft-payments">
-        <div class="ft-pay">VISA</div>
-        <div class="ft-pay">MASTERCARD</div>
-        <div class="ft-pay">AMEX</div>
-        <div class="ft-pay">PAYPAL</div>
-        <div class="ft-pay">APPLE PAY</div>
-      </div>
-    </div>
-  </div>
-  <div class="ft-copy">
-    <span>2026 PADL.STORE - Tous droits reserves</span>
-    <span>
-      <a href="#">CGV</a> - 
-      <a href="#">Mentions legales</a> - 
-      <a href="#">Confidentialite</a>
-    </span>
   </div>
 </footer>
-  </div>
-</div>
-
-<!-- CART -->
-<div class="ov" id="ov" onclick="cC(event)">
-  <div class="cp">
-    <div class="chd"><h3>Mon Panier 🛒</h3><button class="ccl" onclick="tC()">✕</button></div>
-    <div class="clist" id="cl"><div class="cemp"><div style="font-size:38px;margin-bottom:10px">🎾</div><p>Votre panier est vide</p></div></div>
-    <div class="cft">
-      <div class="cto"><span>Total</span><span class="ctp" id="ctp">0€</span></div>
-      <button class="ckbtn" onclick="alert('Paiement bientôt disponible!\nContact: padlstore@gmail.com')">Commander →</button>
-      <div class="csec">🔒 Paiement sécurisé · CB · PayPal</div>
+<footer>
+  <div class="fin">
+    <div class="ftop">
+      <div>
+        <div class="flo">PADL<b>.</b>STORE</div>
+        <div class="fde">192 produits padel. Produits officiels, livraison 24h, retour 30j gratuit.</div>
+        <div class="fso"><div class="fsi">📘</div><div class="fsi">📸</div><div class="fsi">🎵</div><div class="fsi">▶️</div></div>
+      </div>
+      <div class="fcol"><h4>Marques</h4><div class="fls">
+        <div class="fl" onclick="setBrand('Bullpadel',null)">Bullpadel (32)</div>
+        <div class="fl" onclick="setBrand('Adidas',null)">Adidas (28)</div>
+        <div class="fl" onclick="setBrand('Siux',null)">Siux (24)</div>
+        <div class="fl" onclick="setBrand('Nox',null)">Nox (19)</div>
+        <div class="fl" onclick="setBrand('Head',null)">Head (15)</div>
+      </div></div>
+      <div class="fcol"><h4>Service</h4><div class="fls">
+        <div class="fl">Livraison & Retours</div>
+        <div class="fl">Choisir sa raquette</div>
+        <div class="fl">Contact</div>
+        <div class="fl">FAQ</div>
+      </div></div>
+      <div class="fcol"><h4>Autres marques</h4><div class="fls">
+        <div class="fl" onclick="setBrand('Lok',null)">Lok (13)</div>
+        <div class="fl" onclick="setBrand('Oxdog',null)">Oxdog (12)</div>
+        <div class="fl" onclick="setBrand('Babolat',null)">Babolat (9)</div>
+        
+        <div class="fl" onclick="setBrand('Wilson',null)">Wilson (4)</div>
+        <div class="fl" onclick="setBrand('Tecnifibre',null)">Tecnifibre (7)</div>
+      </div></div>
+    </div>
+    <div class="fbot">
+      <div class="fcp">© 2026 PADL.STORE — Tous droits réservés</div>
+      <div class="fbgs"><div class="fbg">🔒 SSL</div><div class="fbg">✅ OFFICIEL</div><div class="fbg">🚚 24H</div><div class="fbg">↩️ 30J</div></div>
     </div>
   </div>
-</div>
-
-<!-- ══ NOTRE HISTOIRE ══ -->
-
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</footer>
+<script>
 const IMG_OVERRIDE={'siux-diablo-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54087-home_default.webp','siux-fenix-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55695-home_default.webp','siux-electra-stupa.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55669-home_default.webp','siux-electra-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55654-home_default.webp','siux-pegasus-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55686-home_default.webp','siux-valkiria.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55695-large_default.webp','siux-tremor-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55686-large_default.webp','siux-fenix-pro-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42943-home_default.webp','siux-valkiria-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42272-home_default.webp','siux-diablo-carbon-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/40012-home_default.webp','siux-inox-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42246-home_default.webp','siux-fenix-comfort-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42209-home_default.webp','wilson-bela-pro-v3.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/47119-home_default.webp','wilson-bela-pro-v2.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/47147-home_default.webp','wilson-defy-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/43305-home_default.webp','wilson-endure.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/43305-home_default.webp','nox-at10-genius-12k.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52702-large_default.webp','nox-at10-genius-18k-alum.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52681-large_default.webp','nox-at10-genius-attack.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52661-large_default.webp','nox-at10-genius-lite.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52728-large_default.webp','nox-ml10-pro-cup.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52545-large_default.webp','nox-at10-future-hybrid.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52616-large_default.webp','nox-at10-future-attack.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52635-large_default.webp','nox-at10-pro-cup-hard.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52505-large_default.webp','nox-at10-pro-cup-comfort.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52526-large_default.webp','nox-at10-genius-18k.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37206-large_default.webp','nox-at10-genius-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37217-home_default.webp','nox-at10-luxury-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37206-large_default.webp','nox-at10-future-hybrid-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52616-large_default.webp','nox-ml10-pro-cup-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52545-large_default.webp','nox-ml10-luxury-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52545-large_default.webp','nox-nerbo-wpt.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52635-large_default.webp','nox-x-one-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52526-large_default.webp','nox-atom-tempo-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52505-large_default.webp','nox-at10-genius-ltd-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37208-large_default.webp','oxdog-oxygen-ultralight.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42471-home_default.webp','oxdog-oxygen-pro.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42388-home_default.webp','lok-maxx-hype-gen2.webp':'https://www.zonadepadel.com/28134-home_default/lok-maxx-hype-gen-2-2026.jpg','lok-be-flow-gen2.webp':'https://www.zonadepadel.com/28161-home_default/lok-be-flow-pink-gen-2-2026.jpg','lok-maxx-force.webp':'https://www.zonadepadel.com/28137-home_default/lok-maxx-flow-gen-2-2026.jpg','lok-pro-control.webp':'https://www.zonadepadel.com/28137-home_default/lok-maxx-flow-gen-2-2026.jpg','lok-flow-pro.webp':'https://www.zonadepadel.com/28137-home_default/lok-maxx-flow-gen-2-2026.jpg','lok-be-flow-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Lok-Be-Flow-Face.png','lok-maxx-hype-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-lok-Maxx-Hype-face.png','lok-maxx-control-2025.webp':'https://www.zonadepadel.com/28137-home_default/lok-maxx-flow-gen-2-2026.jpg','lok-flow-carbon-2025.webp':'https://www.zonadepadel.com/28137-home_default/lok-maxx-flow-gen-2-2026.jpg','lok-be-flow-carbon-2025.webp':'https://www.zonadepadel.com/28161-home_default/lok-be-flow-pink-gen-2-2026.jpg','lok-pro-attack-2025.webp':'https://www.zonadepadel.com/28134-home_default/lok-maxx-hype-gen-2-2026.jpg','lok-force-2025.webp':'https://www.zonadepadel.com/28134-home_default/lok-maxx-hype-gen-2-2026.jpg','lok-junior-2025.webp':'https://www.zonadepadel.com/28161-home_default/lok-be-flow-pink-gen-2-2026.jpg','head-coello-pro-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59137-home_default.webp','head-coello-motion-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59121-home_default.webp','head-coello-team-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59435-home_default.webp','head-coello-vibe-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59100-home_default.webp','head-coello-junior-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59447-home_default.webp','head-extreme-one-x-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54067-home_default.webp','head-extreme-one-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54054-home_default.webp','head-extreme-pro-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51018-home_default.webp','head-extreme-motion-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51025-home_default.webp','head-extreme-team-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51025-home_default.webp','head-evo-extreme-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/40942-home_default.webp','head-radical-pro-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/53996-home_default.webp','head-radical-motion-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54012-home_default.webp','head-coello-pro-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42062-home_default.webp','head-coello-motion-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42079-home_default.webp','head-coello-vibe-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/42092-home_default.webp','head-extreme-pro-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51018-home_default.webp','head-extreme-motion-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51025-home_default.webp','head-speed-one-x-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/38056-home_default.webp','head-speed-pro-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/38014-home_default.webp','head-speed-motion-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/38003-home_default.webp','head-speed-team-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37989-home_default.webp','head-evo-speed-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/40942-home_default.webp','head-gravity-pro-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/36269-home_default.webp','head-gravity-motion-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/36276-home_default.webp','head-gravity-team-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/36285-home_default.webp','nox-at10-genius-12k-xtreme-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52702-home_default.webp','nox-at10-genius-18k-alum-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52681-home_default.webp','nox-at10-genius-12k-lite-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52728-home_default.webp','nox-at10-genius-attack-18k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52661-home_default.webp','nox-at10-genius-attack-12k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52635-home_default.webp','nox-ml10-ventus-control-3k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52545-home_default.webp','nox-ea10-ventus-hybrid-12k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52616-home_default.webp','nox-ea10-ventus-attack-12k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52592-home_default.webp','nox-vk10-ventus-control-12k-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52555-home_default.webp','nox-vk10-ventus-hybrid-lite-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52575-home_default.webp','nox-at10-pro-cup-hard-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52505-home_default.webp','nox-at10-pro-cup-soft-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52526-home_default.webp','nox-equation-hard-advanced-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52487-home_default.webp','nox-equation-soft-advanced-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52486-home_default.webp','nox-at10-genius-18k-alum-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37206-home_default.webp','nox-at10-genius-attack-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37229-home_default.webp','nox-at10-genius-attack-18k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/37240-home_default.webp','nox-tapia-ltd-buenos-aires-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/49038-home_default.webp','nox-prestige-20-fr-exclusive-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/52054-home_default.webp','nox-premium-fr-exclusive-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/45640-home_default.webp','nox-future-attack-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/44762-home_default.webp','nox-future-hybrid-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/44776-home_default.webp','nox-future-control-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/44790-home_default.webp','nox-carbon-quantum-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/45290-home_default.webp','nox-cobalt-quantum-12k-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/45303-home_default.webp','bullpadel-vertex-05-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51063-home_default.webp','bullpadel-vertex-05-geo-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51262-home_default.webp','bullpadel-vertex-05-hybrid-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51081-home_default.webp','bullpadel-vertex-05-woman-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51151-home_default.webp','bullpadel-neuron-02-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51132-home_default.webp','bullpadel-neuron-02-edge-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51272-home_default.webp','bullpadel-neuron-02-cloud-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/56315-home_default.webp','bullpadel-hack-04-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51184-home_default.webp','bullpadel-hack-04-hybrid-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51194-home_default.webp','bullpadel-hack-04-comfort-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51236-home_default.webp','bullpadel-xplo-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51101-home_default.webp','bullpadel-xplo-comfort-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51115-home_default.webp','bullpadel-elite-woman-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51164-home_default.webp','bullpadel-flow-legend-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51210-home_default.webp','bullpadel-wonder-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/51248-home_default.webp','bullpadel-pearl-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/48663-home_default.webp','bullpadel-xplo-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/36896-home_default.webp','bullpadel-icon-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/41781-home_default.webp','bullpadel-pearl-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/41256-home_default.webp','bullpadel-ionic-power-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/38113-home_default.webp','bullpadel-vertex-04-2025.webp':'https://www.stockpadel.com/8874-home_default/bullpadel-vertex-04-25.jpg','bullpadel-vertex-04-hybrid-2025.webp':'https://www.stockpadel.com/8875-home_default/bullpadel-vertex-04-hybrid-25.jpg','adidas-metalbone-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55101-home_default.webp','adidas-metalbone-hrd-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55111-home_default.webp','adidas-metalbone-ctrl-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55121-home_default.webp','adidas-arrow-hit-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55132-home_default.webp','adidas-arrow-hit-ctrl-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55138-home_default.webp','adidas-metalbone-carbon-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55162-home_default.webp','adidas-metalbone-carbon-ctrl-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55170-home_default.webp','adidas-cross-it-light-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54826-home_default.webp','adidas-cross-it-ctrl-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54853-home_default.webp','adidas-metalbone-team-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55147-home_default.webp','adidas-metalbone-team-light-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55146-home_default.webp','adidas-rx-series-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54859-home_default.webp','adidas-drive-black-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54864-home_default.webp','adidas-match-light-2026.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54872-home_default.webp','adidas-metalbone-hrd.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55111-home_default.webp','adidas-metalbone-ctrl-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55121-home_default.webp','adidas-metalbone-team-2025.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55147-home_default.webp','adidas-metalbone-team-light.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55146-home_default.webp','adidas-rx500.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/54826-home_default.webp','adidas-rx200.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/55162-home_default.webp','adidas-metalbone-34-2025.webp':'https://www.zonadepadel.com/21733-home_default/adidas-metalbone-34-2025.jpg','adidas-metalbone-hard-34-2025.webp':'https://www.zonadepadel.com/21735-home_default/adidas-metalbone-hard-34-2025.jpg','adidas-metalbone-ctrl-34-2025.webp':'https://www.zonadepadel.com/21734-home_default/adidas-metalbone-ctrl-34-2025.jpg','adidas-metalbone-carbon-34-2025.webp':'https://www.zonadepadel.com/21681-home_default/adidas-metalbone-carbon-34-2025.jpg','adidas-metalbone-carbon-ctrl-34-2025.webp':'https://www.zonadepadel.com/21682-home_default/adidas-metalbone-carbon-ctrl-34-2025.jpg','adidas-metalbone-team-34-2025.webp':'https://www.zonadepadel.com/21691-home_default/adidas-metalbone-team-34-2025.jpg','adidas-metalbone-team-light-34-2025.webp':'https://www.zonadepadel.com/21692-home_default/adidas-metalbone-team-light-34-2025.jpg','adidas-cross-it-light-34-2025.webp':'https://www.zonadepadel.com/21717-home_default/adidas-cross-it-light-34-2025.jpg','adidas-cross-it-34-2025.webp':'https://www.zonadepadel.com/21718-home_default/adidas-cross-it-34-2025.jpg','adidas-cross-it-ctrl-34-2025.webp':'https://www.zonadepadel.com/21719-home_default/adidas-cross-it-ctrl-34-2025.jpg','adidas-cross-it-carbon-ctrl-34-2025.webp':'https://www.zonadepadel.com/21721-home_default/adidas-cross-it-carbon-ctrl-34-2025.jpg','adidas-adipower-ctrl-multiweight-34-2025.webp':'https://www.zonadepadel.com/21699-home_default/adidas-adipower-ctrl-multiweight-34-2025.jpg','adidas-adipower-carbon-ctrl-2025.webp':'https://www.zonadepadel.com/21702-home_default/adidas-adipower-carbon-ctrl-2025.jpg','adidas-metalbone-control-2026.webp':'https://www.zonadepadel.com/28954-home_default/adidas-metalbone-control-2026.jpg','adidas-metalbone-carbon-control-2026.webp':'https://www.zonadepadel.com/28960-home_default/adidas-metalbone-carbon-control-2026.jpg','adidas-metalbone-superlight-2026.webp':'https://www.zonadepadel.com/28975-home_default/adidas-metalbone-superlight-2026.jpg','adidas-cross-it-carbon-2026.webp':'https://www.zonadepadel.com/28978-home_default/adidas-cross-it-carbon-2026.jpg','adidas-cross-it-carbon-control-2026.webp':'https://www.zonadepadel.com/28981-home_default/adidas-cross-it-carbon-control-2026.jpg','adidas-cross-it-control-2026.webp':'https://www.zonadepadel.com/28984-home_default/adidas-cross-it-control-2026.jpg','adidas-cross-it-team-light-2026.webp':'https://www.zonadepadel.com/28988-home_default/adidas-cross-it-team-light-2026.jpg','adidas-arrow-hit-attack-2026.webp':'https://www.zonadepadel.com/28990-home_default/adidas-arrow-hit-attack-2026.jpg','adidas-arrow-hit-control-2026.webp':'https://www.zonadepadel.com/28993-home_default/adidas-arrow-hit-control-2026.jpg','adidas-arrow-hit-carbon-attack-2026.webp':'https://www.zonadepadel.com/28996-home_default/adidas-arrow-hit-carbon-attack-2026.jpg','adidas-drive-light-2026.webp':'https://www.zonadepadel.com/29021-home_default/adidas-drive-light-2026.jpg','adidas-drive-blue-2026.webp':'https://www.zonadepadel.com/29024-home_default/adidas-drive-blue-2026.jpg','adidas-match-black-green-2026.webp':'https://www.zonadepadel.com/29030-home_default/adidas-match-black-green-2026.jpg','adidas-match-black-orange-2026.webp':'https://www.zonadepadel.com/29033-home_default/adidas-match-black-orange-2026.jpg','adidas-cross-it-team-34-2025.webp':'https://www.zonadepadel.com/21724-home_default/adidas-cross-it-team-34-2025.jpg','adidas-cross-it-light-pro-edt-2025.webp':'https://www.zonadepadel.com/26873-home_default/adidas-cross-it-light-pro-edt-2025.jpg','babolat-technical-viper-jl-30-2026.webp':'https://www.zonadepadel.fr/29092-home_default/babolat-technical-viper-juan-lebron-30-2026.jpg','babolat-viper-soft-jl-30-2026.webp':'https://www.zonadepadel.fr/29095-home_default/babolat-viper-soft-juan-lebron-30-2026.jpg','babolat-technical-viper-30-2026.webp':'https://www.zonadepadel.fr/30201-home_default/babolat-technical-viper-30-2026.jpg','babolat-technical-viper-soft-30-2026.webp':'https://www.zonadepadel.fr/30204-home_default/babolat-technical-viper-soft-30-2026.jpg','babolat-air-viper-26-2026.webp':'https://padelproshop.com/cdn/shop/files/BabolatAirViper2026_1.webp','babolat-counter-viper-26-2026.webp':'https://www.zonadepadel.fr/30223-home_default/babolat-counter-viper-26-2026.jpg','babolat-technical-viper-jl-2025.webp':'https://www.zonadepadel.fr/21831-home_default/babolat-technical-viper-juan-lebron-2025.jpg','babolat-technical-viper-25-2025.webp':'https://www.zonadepadel.fr/22805-home_default/babolat-technical-viper-25-2025.jpg','babolat-air-origin-2025.webp':'https://www.zonadepadel.fr/27078-home_default/babolat-air-origin-2025.jpg','siux-fenix-pro-5-black.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59914-home_default.webp','siux-fenix-elite-vi.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/56066-home_default.webp','wilson-endure-pro-v1.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59067-home_default.webp','wilson-endure-v1.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59053-home_default.webp','wilson-endure-ls-v1.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/59082-home_default.webp','wilson-defy-v1.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/43009-home_default.webp','wilson-defy-ls-v1.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/43014-home_default.webp','wilson-bela-ls-v3.webp':'https://www.extreme-padel.fr/modules/wkwebp/views/img/product/47133-home_default.webp','babolat-technical-veron-30-2026.webp':'https://www.zonadepadel.fr/30208-home_default/babolat-technical-veron-30-2026.jpg','babolat-technical-veron-jl-30-2026.webp':'https://www.zonadepadel.fr/29093-home_default/babolat-technical-veron-jl-30-2026.jpg','babolat-air-veron-26-2026.webp':'https://padelproshop.com/cdn/shop/files/BabolatAirVeron2026_1.webp','babolat-air-vertuo-26-2026.webp':'https://www.zonadepadel.fr/30231-home_default/babolat-air-vertuo-26-2026.jpg','babolat-counter-veron-26-2026.webp':'https://padelproshop.com/cdn/shop/files/BabolatCounterVeron2026_1.webp','babolat-counter-vertuo-26-2026.webp':'https://padelproshop.com/cdn/shop/files/BabolatCounterVertuo2026_1.webp','babolat-technical-veron-25-2025.webp':'https://www.zonadepadel.fr/22808-home_default/babolat-technical-veron-25-2025.jpg','babolat-air-viper-25-2025.webp':'https://www.zonadepadel.fr/22790-home_default/babolat-air-viper-25-2025.jpg','babolat-air-veron-25-2025.webp':'https://www.zonadepadel.fr/22795-home_default/babolat-air-veron-25-2025.jpg','babolat-air-vertuo-25-2025.webp':'https://www.zonadepadel.fr/22801-home_default/babolat-air-vertuo-25-2025.jpg','babolat-counter-viper-25-2025.webp':'https://www.zonadepadel.fr/22817-home_default/babolat-counter-viper-25-2025.jpg','babolat-counter-veron-25-2025.webp':'https://www.zonadepadel.fr/22821-home_default/babolat-counter-veron-25-2025.jpg','babolat-technical-vertuo-25-2025.webp':'https://www.zonadepadel.fr/22815-home_default/babolat-technical-vertuo-25-2025.jpg','babolat-counter-vertuo-25-2025.webp':'https://www.zonadepadel.fr/22818-home_default/babolat-counter-vertuo-25-2025.jpg','babolat-veron-jl-30-2026.webp':'https://www.zonadepadel.fr/29093-home_default/babolat-technical-veron-jl-30-2026.jpg','babolat-counter-origin-2025.webp':'https://www.zonadepadel.fr/27079-home_default/babolat-counter-origin-2025.jpg','babolat-technical-viper-2025.webp':'https://www.zonadepadel.com/22805-home_default/babolat-technical-viper-25-2025.jpg','babolat-counter-viper-2025.webp':'https://www.zonadepadel.com/22810-home_default/babolat-counter-viper-25-2025.jpg','babolat-air-viper-2025.webp':'https://www.zonadepadel.com/22790-home_default/babolat-air-viper-25-2025.jpg','babolat-air-veron.webp':'https://www.zonadepadel.com/22795-home_default/babolat-air-veron-25-2025.jpg','babolat-air-vertuo.webp':'https://www.zonadepadel.com/22801-home_default/babolat-air-vertuo-25-2025.jpg','babolat-counter-viper.webp':'https://www.zonadepadel.com/22810-home_default/babolat-counter-viper-25-2025.jpg','babolat-technical-viper.webp':'https://www.zonadepadel.com/22805-home_default/babolat-technical-viper-25-2025.jpg','babolat-air-viper.webp':'https://www.zonadepadel.com/22790-home_default/babolat-air-viper-25-2025.jpg','babolat-technical-viper-soft.webp':'https://www.zonadepadel.com/30204-home_default/babolat-technical-viper-soft-30-2026.jpg','babolat-technical-vertuo-26-2026.webp':'https://www.zonadepadel.fr/30228-home_default/babolat-technical-vertuo-26-2026.jpg','siux-electra-st5-stupa-pro-noir-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-electra-st5-noir-face.png','siux-electra-st5-stupa-pro-rouge-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-siux-electra-st5-stupa-pro-rouge-2026-face.png','siux-electra-st5-elite-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-electra-elite-6-2026-face.png','siux-fenix-pro-vi-black-edition-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Fenix-Pro-VI-Black-Edition-2026-Face.png','siux-trilogy-elite-6-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-siux-trilogy-elite-6-2026-face.png','siux-fenix-v-pro-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-Siux-fenix-Pro-5-face.png','siux-fenix-pro-v-black-edition-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Fenix-Pro-V-Black-Edition-Face.png','siux-fenix-v-elite-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/siux-fenix-elite-5-2025-face.jpg','siux-electra-st4-stupa-pro-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Electra-ST4-Stupa-Pro-2025-Face.png','siux-electra-st3-special-edition.webp':'https://esprit-padel-shop.com/cdn/shop/files/coffret-siux-electra-st3-edition-special-surface.png','siux-trilogy-pro-5-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Trilogy-Pro-5-2025-Face.png','siux-diablo-4-elite-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-SiuxDiablo-Elite-4-2025-Face.png','siux-spyder-4-control-flex-2025.webp':'https://padelproshop.com/cdn/shop/files/flex5.webp','siux-spyder-4-attack-flex-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Spyder-4-Attack-Flex-2025-Face_a9a138d6-7457-410d-a6bd-3939ba8d4b59.png','siux-beat-hybrid-2-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Siux-Beat-Hybrid-2-2025-Face.png','siux-ultra-pro.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-siux-ultra-pro-2024-face.png','oxdog-ultimate-pro-light-hes-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Pro-Light-HES-2026-Face.png','oxdog-pure-pro-plus-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Pure-Pro-plus-2026-Face.png','oxdog-ultimate-pro-plus-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Pro-Plus-2025-Face.png','oxdog-ultimate-pro-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Pro-2025-Face.png','oxdog-ultimate-pro-smash-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Smash-2025-face_ac1e9050-1825-405e-9eb2-5d72a4b875c9.png','oxdog-ultimate-tour-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Tour-2025-Face.png','oxdog-ultimate-match-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Ultimate-Match-2025-Face.png','oxdog-ultimate-court-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-oxdog-Ultimate-COURT-2024.png','oxdog-hyper-pro-plus-2-0-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Hyper-Pro-plus-2.0-2025-Face.png','oxdog-pure-pro-plus-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Pure-Pro-plus-2025-Face.png','oxdog-sense-pro-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Oxdog-Sense-Pro-2025-Face.png','lok-maxx-hype-gen-2-2026.webp':'https://padelproshop.com/cdn/shop/files/LOKMaxxHypeGen22026MikeYanguas_0_7ba48f1a-2bf8-46e8-9dc0-969e9b238eab.webp','lok-maxx-flow-gen-2-2026.webp':'https://padelproshop.com/cdn/shop/files/PalaLokMaxxFlow22026_1_46d42e4e-4618-4ec8-88b2-0d7d94a899f2.webp','lok-carbon-on-hype-gen-2-2026.webp':'https://padelproshop.com/cdn/shop/files/hy1_6b318e77-5524-4d94-b577-29971f81783c.webp','lok-be-hype-gen-2-2026.webp':'https://padelproshop.com/cdn/shop/files/BeHypeGen2_1_2c92430b-fdc9-4595-a92c-c9e6808f37b4.webp','lok-maxx-flow-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Lok-Maxx-Flow-Face.png','wilson-endure-pro-v1-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Wilson-Endure-Pro-V1-2026-Face.png','wilson-endure-v1-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-wilson-endure-v1-2026-face.png','wilson-endure-ls-v1-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Wilson-Endure-LS-V1-2026-Face.png','wilson-bela-pro-v3-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-wilson-Bela-Pro-V3-Face.png','wilson-bela-v3-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-Wilson-Bela-V3-Face.png','wilson-bela-ls-v3-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Wilson-Bela-V3-LS-2025-Face_5341f611-dcda-4f0d-ae48-2ee2dbfda8a4.png','wilson-defy-pro-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Wilson-Defy-pro-2025-face_1.png','tecnifibre-bomba-max-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-tecnifibre-bomba-max-face.png','tecnifibre-curva-power-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-tecnifibre-curva-power-face.png','tecnifibre-curva-soft-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-Tecnifibre-Curva-Soft-Face.png','tecnifibre-curva-team-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-tecnifibre-curva-team-face_74fe4291-c6cd-41f3-9c64-f97185cd0f26.jpg','tecnifibre-wall-breaker-365-2025.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-tecnifibre-wall-breaker-365-2024-face.png','tecnifibre-wall-breaker-365-destock.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-tecnifibre-wall-breaker-365-2024-face.png','tecnifibre-wall-master-370.webp':'https://esprit-padel-shop.com/cdn/shop/files/raquette-de-padel-tecnifibre-wall-master-2023-370-face.jpg','adidas-ubersonic5-noir.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-adidas-Ubersonic-5-clay-blanc-cote2.png','adidas-court-quick-bleu.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-Adidas-Court-Quick-Bleu-Rouge-Paire.png','bullpadel-vertex-vibram-25v-noir.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-Vertex-Vibram-25V-Noir-Cote.png','bullpadel-hack-vibram-25i-noir.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-Bullpadel-Hack-Vibram-25I-noir-cote.jpg','nox-at10-lux-noir.webp':'https://esprit-padel-shop.com/cdn/shop/files/chaussures-de-padel-unisex-nox-at10-lux-noir-cote-exterieur.png','nox-at10-pro-blanc.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-Nox-AT10-Pro-Blanc-Cote2.png','head-motion-pro-boa.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-homme-Head-Boa-Fit-System-cote.png','head-sprint-pro-40.webp':'https://esprit-padel-shop.com/cdn/shop/files/Chaussures-de-padel-Homme-Head-Sprint-Pro-4.0-Blanc-3q.png','adidas-multigame-34-rouge.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-de-padel-Adidas-Multigame-3.4-Rouge-Noir-3q.png','adidas-tour-34-rouge.webp':'https://esprit-padel-shop.com/cdn/shop/files/sac-de-padel-adidas-tour-3-4-rouge-noir-deriere.png','bullpadel-hack-premier-padel.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-de-padel-Bullpadel-Hack-Premier-Padel-3q.png','bullpadel-hack-sac-dos-2026.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-a-dos-Bullpadel-Hack-Noir-2026-Face.png','nox-at10-competition-xl.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-de-padel-No-AT10-Competition-XL-2024-3quart.png','nox-at10-team-gris-orange.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-de-padel-Nox-at10-2024-team-gris-ORANGE-3q.png','head-tour-blanc.webp':'https://esprit-padel-shop.com/cdn/shop/files/sac-de-padel-head-tour-blanc-3q.png','head-tour-25l-noir.webp':'https://esprit-padel-shop.com/cdn/shop/files/Sac-a-dos-Head-Tour-25L-Noir-3q.png','adidas-tshirt-galan.webp':'https://esprit-padel-shop.com/cdn/shop/files/T-shirt-Adidas-Replica-Ale-Galan-Face.png','adidas-short-galan.webp':'https://esprit-padel-shop.com/cdn/shop/files/short-adidas-court-sport-Blanc-face.png','bullpadel-tshirt-paquito.webp':'https://esprit-padel-shop.com/cdn/shop/files/t-shirt-bullpadel-replica-paquito-25i-vert-Face.png','bullpadel-short-paquito.webp':'https://padelproshop.com/cdn/shop/files/PantalonCortoBullpadelPreuxPremierPadelCruD_1.webp','nox-tshirt-tapia.webp':'https://esprit-padel-shop.com/cdn/shop/files/T-shirt-Nox-Replica-Agustin-Tapia-AT10-Bleu-Marine-2025-avant.png','nox-short-tapia.webp':'https://padelproshop.com/cdn/shop/files/PantalonCortoNoxTeamNavyBlue2026_1.webp','head-tshirt-coello.webp':'https://esprit-padel-shop.com/cdn/shop/files/T-shirt-Head-Replica-Coello-Noir-2026-Face.png','head-short-coello.webp':'https://www.streetpadel.com/images/cargador/productos/imagen-1-18288-45cf3d2a-17836-NORMAL.jpg','wilson-bela-pro-v25.webp':'https://esprit-padel-shop.com/cdn/shop/files/Raquette-de-padel-wilson-bela-pro-v25-2024-face.jpg'};
 const GH='https://raw.githubusercontent.com/fabio6-tech/Padelprix-/main/';
 const FB='https://placehold.co/400x400/edeae5/888?text=Photo+bientot';
@@ -1696,12 +1864,14 @@ function galNav(dir) {
 }
 
 initBB();
+rG('hg',P.filter(p=>p.Best&&p.cat==='Raquettes').slice(0,8));
 const BVslugs=['nox-at10-genius-12k-xtreme-2026.webp', 'adidas-metalbone-2026.webp', 'bullpadel-vertex-05-2026.webp', 'babolat-counter-viper-26-2026.webp', 'siux-electra-st5-stupa-pro-rouge-2026.webp'];
 const BVprods=BVslugs.map(s=>P.find(p=>p.img===s)).filter(Boolean);
 rG('grid_mv2026',BVprods);
 const BV2025slugs=['adidas-metalbone-34-2025.webp', 'wilson-bela-pro-v3-2025.webp', 'babolat-counter-viper-25-2025.webp', 'babolat-air-viper-25-2025.webp', 'nox-at10-genius-18k-alum-2025.webp'];
 const BV2025prods=BV2025slugs.map(s=>P.find(p=>p.img===s)).filter(Boolean);
 rG('grid_mv2025',BV2025prods);
+
 </script>
 </body>
 </html>
