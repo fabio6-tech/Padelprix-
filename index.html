@@ -563,7 +563,7 @@ footer{background:var(--k);color:var(--w);padding:44px 20px 22px;}
         <div><div class="bab-stat-n">60+</div><div class="bab-stat-l">Pays dans le monde</div></div>
         <div><div class="bab-stat-n">#1</div><div class="bab-stat-l">En cordages depuis 1875</div></div>
       </div>
-      <button class="bab-btn" onclick="setBrand('Babolat',null)">Voir les raquettes Babolat →</button>
+      <button class="bab-btn" onclick="nv('Raquettes',null);cB='Babolat';document.querySelectorAll('.fbrand').forEach(x=>x.classList.remove('on'));render()">Voir les raquettes Babolat →</button>
     </div>
   </div>
 </section>
