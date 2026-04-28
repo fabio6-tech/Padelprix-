@@ -3365,7 +3365,7 @@ window.switchGallery = function(productId, idx, el){
 
 
 <script>
-// V12 — Auto-inject gallery on product detail (avec reset styles parent)
+// V13 — Auto-inject gallery + hide V4 .gal-thumbs duplicate
 (function(){
   const _origOd = window.od;
   if (typeof _origOd !== 'function') return;
@@ -3378,7 +3378,6 @@ window.switchGallery = function(productId, idx, el){
       if (!galleryHTML) return;
       const firstImg = dc.querySelector('img');
       if (!firstImg) return;
-      // Cherche le wrap, en remontant jusqu'à 4 niveaux
       let wrap = firstImg.parentElement;
       for (let i = 0; i < 4 && wrap; i++) {
         const cls = wrap.className || '';
@@ -3386,12 +3385,15 @@ window.switchGallery = function(productId, idx, el){
         wrap = wrap.parentElement;
       }
       if (!wrap) wrap = firstImg.parentElement;
-      // Reset les contraintes layout du parent (aspect-ratio, height, overflow)
       wrap.style.aspectRatio = 'auto';
       wrap.style.height = 'auto';
       wrap.style.maxHeight = 'none';
       wrap.style.overflow = 'visible';
       wrap.innerHTML = galleryHTML;
+      // Hide les autres thumbs résiduels du V4 (gal-thumbs, dgal, etc.)
+      dc.querySelectorAll('.gal-thumbs, .dt-thumbs, .dgal-thumbs').forEach(function(el){
+        if (!el.closest('.padl-gallery')) el.style.display = 'none';
+      });
     }, 80);
   };
 })();
