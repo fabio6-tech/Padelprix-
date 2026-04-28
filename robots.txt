@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Optimisation crawl Google
+Crawl-delay: 1
+
+Sitemap: https://padelprix.fr/sitemap.xml
