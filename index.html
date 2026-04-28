@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- COMBINED_V11_IMAGES.html — 618 produits, 613 avec images Amazon, 2627 angles totaux -->
+<!-- COMBINED_V12_GALLERY_FIX.html — galerie multi-angles correctement positionnée -->
 <!-- v1775556399 -->
 <html lang="fr">
 <head>
@@ -3321,44 +3321,51 @@ window.closeClub=function(){document.getElementById('clubPg').classList.remove('
 window.subscribeClub=function(e){e.preventDefault();var email=document.getElementById('clubEmail').value;if(!email||email.indexOf('@')<0)return false;var k='padlpx_club_subscribers';var list=JSON.parse(localStorage.getItem(k)||'[]');list.push({email:email,t:Date.now()});localStorage.setItem(k,JSON.stringify(list));trackEvent('club_subscribe',{email:email});var btn=e.target.querySelector('button');var orig=btn.textContent;btn.textContent='✓ Inscrit ! Email confirmé';btn.style.background='#00c96e';document.getElementById('clubEmail').value='';setTimeout(function(){btn.textContent=orig;btn.style.background='';},4000);return false;};
 </script>
 
-<!-- ═══ V11 — Galerie multi-angles fiche produit ═══ -->
+<!-- ═══ V12 — Galerie multi-angles fiche produit (FIX layout parent) ═══ -->
 <style>
-.gallery-main{width:100%;max-width:560px;height:auto;aspect-ratio:1/1;background:#fff;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:1px solid var(--bd)}
-.gallery-main img{max-width:100%;max-height:100%;object-fit:contain;transition:opacity .2s}
-.gallery-thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:560px;margin-bottom:20px}
-.gallery-thumbs.few{grid-template-columns:repeat(auto-fit,minmax(60px,80px))}
-.gallery-thumb{aspect-ratio:1/1;background:#fff;border:2px solid var(--bd);border-radius:8px;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,transform .15s}
-.gallery-thumb:hover{transform:translateY(-2px)}
-.gallery-thumb.on{border-color:var(--y);border-width:3px}
-.gallery-thumb img{max-width:100%;max-height:100%;object-fit:contain;padding:4px}
-@media (max-width:640px){.gallery-thumbs{grid-template-columns:repeat(5,1fr)}}
+/* Override le parent .gal-main qui a aspect-ratio:1/1 + overflow:hidden */
+.gal-main:has(.padl-gallery){aspect-ratio:auto !important;height:auto !important;overflow:visible !important;display:block !important}
+.padl-gallery{display:flex;flex-direction:column;width:100%;max-width:560px;margin:0 auto}
+.padl-gallery .pg-main{width:100%;background:#fff;border-radius:16px;border:1px solid var(--bd);overflow:hidden;margin-bottom:14px;min-height:360px;display:flex;align-items:center;justify-content:center;padding:12px}
+.padl-gallery .pg-main img{max-width:100%;max-height:480px;width:auto;height:auto;object-fit:contain;transition:opacity .2s}
+.padl-gallery .pg-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.padl-gallery .pg-thumb{flex:0 0 auto;width:64px;height:64px;background:#fff;border:2px solid var(--bd);border-radius:8px;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,transform .15s;padding:4px}
+.padl-gallery .pg-thumb:hover{transform:translateY(-2px)}
+.padl-gallery .pg-thumb.on{border-color:var(--y);border-width:3px}
+.padl-gallery .pg-thumb img{max-width:100%;max-height:100%;object-fit:contain}
+@media (max-width:640px){
+  .padl-gallery .pg-main{min-height:280px}
+  .padl-gallery .pg-main img{max-height:340px}
+  .padl-gallery .pg-thumb{width:54px;height:54px}
+}
 </style>
 <script>
 window.renderGallery = function(productId){
   const urls = galleryForId(productId);
   if (!urls || urls.length === 0) return '';
-  const thumbsClass = urls.length < 4 ? 'few' : '';
-  let html = `<div class="gallery-main"><img id="galleryMain_${productId}" src="${urls[0]}" alt=""></div>`;
+  let html = '<div class="padl-gallery">';
+  html += '<div class="pg-main"><img id="galleryMain_'+productId+'" src="'+urls[0]+'" alt="" loading="eager"></div>';
   if (urls.length > 1) {
-    html += `<div class="gallery-thumbs ${thumbsClass}">`;
-    urls.forEach((u, i) => {
-      html += `<div class="gallery-thumb ${i===0?'on':''}" onclick="switchGallery(${productId},${i},this)"><img src="${u}" alt="Angle ${i+1}" loading="lazy"></div>`;
+    html += '<div class="pg-thumbs">';
+    urls.forEach(function(u, i){
+      html += '<div class="pg-thumb '+(i===0?'on':'')+'" onclick="switchGallery('+productId+','+i+',this)"><img src="'+u+'" alt="Angle '+(i+1)+'" loading="lazy"></div>';
     });
     html += '</div>';
   }
+  html += '</div>';
   return html;
 };
 window.switchGallery = function(productId, idx, el){
   const urls = galleryForId(productId);
   document.getElementById('galleryMain_'+productId).src = urls[idx];
-  el.parentElement.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('on'));
+  el.parentElement.querySelectorAll('.pg-thumb').forEach(function(t){ t.classList.remove('on'); });
   el.classList.add('on');
 };
 </script>
 
 
 <script>
-// V11 — Auto-inject gallery on product detail
+// V12 — Auto-inject gallery on product detail (avec reset styles parent)
 (function(){
   const _origOd = window.od;
   if (typeof _origOd !== 'function') return;
@@ -3369,13 +3376,23 @@ window.switchGallery = function(productId, idx, el){
       if (!dc) return;
       const galleryHTML = window.renderGallery(id);
       if (!galleryHTML) return;
-      // Find first img in dgrid and replace its container with gallery
       const firstImg = dc.querySelector('img');
-      if (firstImg) {
-        const wrap = firstImg.closest('.dimg, .pimg, [class*="img"]') || firstImg.parentElement;
-        if (wrap) wrap.innerHTML = galleryHTML;
+      if (!firstImg) return;
+      // Cherche le wrap, en remontant jusqu'à 4 niveaux
+      let wrap = firstImg.parentElement;
+      for (let i = 0; i < 4 && wrap; i++) {
+        const cls = wrap.className || '';
+        if (cls.includes('gal-main') || cls.includes('dimg') || cls.includes('pimg') || cls.includes('-img')) break;
+        wrap = wrap.parentElement;
       }
-    }, 60);
+      if (!wrap) wrap = firstImg.parentElement;
+      // Reset les contraintes layout du parent (aspect-ratio, height, overflow)
+      wrap.style.aspectRatio = 'auto';
+      wrap.style.height = 'auto';
+      wrap.style.maxHeight = 'none';
+      wrap.style.overflow = 'visible';
+      wrap.innerHTML = galleryHTML;
+    }, 80);
   };
 })();
 </script>
